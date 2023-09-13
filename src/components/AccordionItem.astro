@@ -1,0 +1,20 @@
+---
+let { key, class: classes } = Astro.props;
+---
+
+<li class={`accordion-item accordion-item-${key} ${classes}`} aria-expanded="false" data-key={key}>
+    <button class="accordion-item--header w-full">
+        <slot name="header" />
+    </button>
+    <div class="accordion-item--body">
+        <slot name="body" />
+    </div>
+</li>
+
+<style lang="postcss">
+    .accordion-item .accordion-item--body {
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.3s ease-in-out;
+    }
+</style>

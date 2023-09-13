@@ -1,0 +1,82 @@
+---
+import Accordion from "./Accordion.astro";
+import AccordionItem from "./AccordionItem.astro";
+---
+
+<section class="bg-light py-10">
+    <div class="container max-w-6xl mx-auto px-4 py-5">
+        <h2 class="text-blue text-5xl font-medium pl-12">Want to know more <br/> about the project?</h2>
+        <div class="grid grid-flow-col auto-cols-auto gap-5 mt-10">
+            <div class="self-center px-12">
+                <div class="w-40 h-40 bg-red-50 rounded-full"></div>
+            </div>
+            <Accordion defaultItem="1" class="px-12" id="s1-accordion">
+                <AccordionItem key="1" class="border-t-2 border-gray-200">
+                    <h2 slot="header" class="text-xl font-bold my-4 text-green-accent text-left">Why an ecosystem?</h2>
+                    <ul slot="body" class="list-disc list-inside pb-4">
+                        <li>
+                            A healthy ecosystem is dynamically balanced, with
+                            diversity, resiliency, and integrity as defining
+                            characteristics.
+                        </li>
+                        <li>
+                            Adopting a systems-based approach enhances awareness
+                            of resource allocation, identifies gaps, and
+                            uncovers the interactions between different funders
+                            and programming so that they can design more
+                            meaningful and effective objective-oriented
+                            interventions and support.
+                        </li>
+                        <li>
+                            This approach enables the design of more meaningful
+                            and effective objective-oriented interventions and
+                            support within the ecosystem.
+                        </li>
+                        <li>
+                            An ecosystem is a dynamic and flexible network
+                            comprising interconnected systems and heterogeneous
+                            species, including actors, institutions, and
+                            technologies.
+                        </li>
+                        <li>
+                            Coexistence and cooperative competition
+                            (coopetition) among these elements sustain the
+                            broader ecosystem while promoting individual
+                            survival and growth.
+                        </li>
+                        <li>
+                            Ecosystems are complex and multivariate, requiring
+                            balance and resilience to absorb change, adapt, and
+                            transform while maintaining consistent processes and
+                            structures.
+                        </li>
+                        <li>
+                            Ecosystems are not static; they possess persistent
+                            structures shaped by their own history and exhibit a
+                            stable participation of interconnecting groups of
+                            people, their tools, and practices.
+                        </li>
+                    </ul>
+                </AccordionItem>
+                <AccordionItem key="2" class="border-t-2 border-gray-200">
+                    <h2 slot="header" class="text-xl font-bold my-4 text-green-accent text-left">What’s a healthy information ecosystem?</h2>
+                    <p slot="body" class="pb-4">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Nullam id felis et ipsum bibendum ultrices. Ut vel orci
+                        urna. Nulla facilisi. Pellentesque vitae ipsum eget enim
+                        mollis placerat.
+                    </p>
+                </AccordionItem>
+                <AccordionItem key="3" class="border-t-2 border-b-2 border-gray-200">
+                    <h2 slot="header" class="text-xl font-bold my-4 text-green-accent text-left">Why does it matter?</h2>
+                    <p slot="body" class="pb-4">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Nullam id felis et ipsum bibendum ultrices. Ut vel orci
+                        urna. Nulla facilisi. Pellentesque vitae ipsum eget enim
+                        mollis placerat.
+                    </p>
+                </AccordionItem>
+            </Accordion>
+        </div>
+    </div>
+</section>

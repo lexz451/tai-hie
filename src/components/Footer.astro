@@ -1,0 +1,41 @@
+---
+import { Sprite } from 'astro-icon';
+---
+<footer class="bg-blue-dark">
+    <div class="grid grid-cols-3 container mx-auto max-w-6xl py-12">
+        <div>
+            <Sprite.Provider>
+                <Sprite name="logo-white" class="fill-light w-[200px] h-[50px]"></Sprite>
+            </Sprite.Provider>
+        </div>
+        <div>
+            <nav class="flex flex-col">
+                <a class="text-green-accent text-lg">Healthy ecosystem</a>
+                <a class="text-green-accent text-lg mt-2">The project</a>
+                <a class="text-green-accent text-lg mt-2">Main elements</a>
+                <a class="text-green-accent text-lg mt-2">Funding</a>
+            </nav>
+        </div>
+        <div class="">
+            <span class="text-lg text-green-accent">Credits</span>
+            <p class="mt-4 text-light">
+                Dr. Courtney C. Radsch is a fellow at UCLA Institute for
+                Technology, Law & Policy and the Center for Democracy and
+                Technology, and she writes and speaks about technology, media,
+                and rights.
+            </p>
+            <p class="mt-4 text-light">
+                The Transparency and Accountability Initiative (TAI) is a donor
+                collaborative working toward a democratic world where power and
+                resources are more equally distributed; people are informed and
+                empowered, governments and the corporate sector are open and
+                responsive, and collective action advances the public good.
+            </p>
+        </div>
+    </div>
+    <div class="bg-blue-light flex items-center justify-center p-5">
+        <span class="text-lg text-light">
+            Website designed and developed by <strong class="text-green-accent">W.LAND</strong>
+        </span>
+    </div>
+</footer>

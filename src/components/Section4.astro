@@ -1,0 +1,115 @@
+---
+import Accordion from "./Accordion.astro";
+import AccordionItem from "./AccordionItem.astro";
+---
+
+<section class="bg-light py-10">
+    <div class="container max-w-4xl mx-auto px-4">
+        <div class="flex flex-col items-center">
+            <h2 class="text-4xl font-medium">Funding</h2>
+            <p class="max-w-prose text-center mt-5">
+                Understand the latest trends in existing interventions to
+                support the capability and impact of a healthy information
+                ecosystem
+            </p>
+            <div class="my-5 w-full">
+                <Accordion event="hover" defaultItem="s4-1">
+                    <AccordionItem key="s4-1"
+                        class="bg-blue-light p-5 w-full rounded-lg my-4"
+                    >
+                        <div slot="header" class="flex items-center w-full">
+                            <h3
+                                class="text-2xl font-medium flex-1 text-green-accent text-left"
+                            >
+                                Media access and policy
+                            </h3>
+                            <div></div>
+                            <span class="text-6xl font-bold text-light">230<span class="text-green-accent">k</span></span>
+                        </div>
+                        <div slot="body" class="mt-5">
+                            <div class="flex items-center text-light">
+                                <span>Information and media literacy</span>
+                            </div>
+                            <div class="flex items-center text-light mt-2">
+                                <span>Media justice</span>
+                            </div>
+                        </div>
+                    </AccordionItem>
+                    <AccordionItem key="s4-2"
+                        class="bg-blue-light p-5 w-full rounded-lg my-4"
+                    >
+                        <div slot="header" class="flex items-center w-full">
+                            <h3
+                                class="text-2xl font-medium flex-1 text-green-accent text-left"
+                            >
+                            Information 
+                            communications technology
+                            </h3>
+                            <div></div>
+                            <span class="text-6xl font-bold text-light">230<span class="text-green-accent">k</span></span>
+                        </div>
+                        <div slot="body" class="mt-5">
+                            <div class="flex items-center text-light">
+                                <span>Information and media literacy</span>
+                            </div>
+                            <div class="flex items-center text-light mt-2">
+                                <span>Media justice</span>
+                            </div>
+                        </div>
+                    </AccordionItem>
+                    <AccordionItem key="s4-3"
+                        class="bg-blue-light p-5 w-full rounded-lg my-4"
+                    >
+                        <div slot="header" class="flex items-center w-full">
+                            <h3
+                                class="text-2xl font-medium flex-1 text-green-accent text-left"
+                            >
+                            Communication media
+                            </h3>
+                            <div></div>
+                            <span class="text-6xl font-bold text-light">230<span class="text-green-accent">k</span></span>
+                        </div>
+                        <div slot="body" class="mt-5">
+                            <div class="flex items-center text-light">
+                                <span>Information and media literacy</span>
+                            </div>
+                            <div class="flex items-center text-light mt-2">
+                                <span>Media justice</span>
+                            </div>
+                        </div>
+                    </AccordionItem>
+                    <AccordionItem key="s4-4"
+                        class="bg-blue-light p-5 w-full rounded-lg my-4"
+                    >
+                        <div slot="header" class="flex items-center w-full">
+                            <h3
+                                class="text-2xl font-medium flex-1 text-green-accent text-left"
+                            >
+                            News and public information
+                            </h3>
+                            <div></div>
+                            <span class="text-6xl font-bold text-light">230<span class="text-green-accent">k</span></span>
+                        </div>
+                        <div slot="body" class="mt-5">
+                            <div class="flex items-center text-light">
+                                <span>Information and media literacy</span>
+                            </div>
+                            <div class="flex items-center text-light mt-2">
+                                <span>Media justice</span>
+                            </div>
+                        </div>
+                    </AccordionItem>
+                </Accordion>
+            </div>
+            <span class="text-2xl max-w-prose text-center font-normal">
+                For more details on philanthropic support for healthy <br />
+                information ecosystems feel free to reach out
+            </span>
+            <button
+                class="bg-green-accent text-light mt-5 px-8 py-2 rounded-3xl"
+            >
+                Contact TAI
+            </button>
+        </div>
+    </div>
+</section>
