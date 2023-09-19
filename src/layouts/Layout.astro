@@ -1,6 +1,15 @@
 --- 
 import Footer from '../components/Footer.astro';
 import '@fontsource-variable/inter';
+import Modal from '../components/Modal.astro';
+import CivilBg from '../images/civil.png';
+import InfraBg from '../images/infrastructural.png';
+import KeyFBg from '../images/key_factors.png';
+import MediaBg from '../images/media.png';
+import PrivateBg from '../images/private.png';
+import PublicBg from '../images/public.png';
+import KeyStoneBg from '../images/keystone.png';
+
 
 interface Props {
 	title: string;
@@ -22,8 +31,17 @@ const { title } = Astro.props;
 	<body>
 		<slot />
 		<Footer></Footer>
+		<Modal id="civil" title="Title" content="Content" bg={CivilBg.src}></Modal>
+		<Modal id="key_factors" title="Title" content="Content" bg={KeyFBg.src}></Modal>
+		<Modal id="non_fiction" title="Title" content="Content" color="#91ffea"></Modal>
+		<Modal id="key_stone" title="Title" content="Content" bg={KeyStoneBg.src}></Modal>
+		<Modal id="infrastructural" title="Title" content="Content" bg={InfraBg.src}></Modal>
+		<Modal id="private" title="Title" content="Content" bg={PrivateBg.src}></Modal>
+		<Modal id="public" title="Title" content="Content" bg={PublicBg.src}></Modal>
+		<Modal id="media" title="Title" content="Content" bg={MediaBg.src}></Modal>
 	</body>
 </html>
+
 <style is:global lang="postcss">
 	body {
 		@apply flex flex-col min-h-screen;

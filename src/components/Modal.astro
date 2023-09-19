@@ -1,0 +1,72 @@
+---
+import Icon from "astro-icon";
+const { bg, title, content, id, color } = Astro.props;
+---
+
+<div id={`${id}-modal`} class="modal fixed min-h-screen w-full">
+    <div class="absolute z-10 top-0 right-0 mt-4 mr-4">
+        <button class="close text-white text-3xl hover:text-gray-300">
+            <Icon name="close" class="w-8"></Icon>
+        </button>
+    </div>
+    <div class="absolute inset-0 bg-cover bg-center" style={`background-color: ${color}`}>
+        {bg && <img src={bg} alt="" class="w-full h-full object-cover" />}
+    </div>
+    <div class="absolute inset-0 bg-black opacity-25"></div>
+    <div class="relative min-h-screen flex flex-col justify-center items-center">
+        <div class="text-white text-center">
+        <h1 class="text-5xl font-bold mb-4">{ title }</h1>
+        <p class="text-2xl">{ content }</p>
+        </div>
+    </div>
+</div>
+
+<style lang="postcss">
+    .modal {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease-in-out;
+    }
+    .modal.active {
+        opacity: 1;
+        visibility: visible;
+    }
+</style>
+
+<script>
+    import { activePyramidItem } from '../store/pyramid';
+	import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
+
+    function showModal(id) {
+        const modal = document.getElementById(`${id}-modal`);
+        modal.classList.add(`active`);
+    }
+
+    function hideModal(id) {
+        console.log(id);
+        const modal = document.getElementById(`${id}`);
+        modal.classList.remove(`active`);
+    }
+
+	activePyramidItem.subscribe((item) => {
+        console.log(item);
+		if (item) {
+			const modal = document.getElementById(`${item}-modal`);
+			disableBodyScroll(modal, {
+				reserveScrollBarGap: true,
+			})
+            showModal(item);
+		} else {
+            enableBodyScroll(document.body);
+        }
+	});
+
+    const modals = document.querySelectorAll(`.modal`);
+    for (let modal of modals) {
+        const closeBtn = modal.querySelector(`button.close`);
+        closeBtn.addEventListener(`click`, () => {
+            activePyramidItem.set(null);
+            hideModal(modal.id);
+        });
+    }
+</script>
