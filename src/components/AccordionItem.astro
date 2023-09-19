@@ -1,10 +1,22 @@
 ---
-let { key, class: classes } = Astro.props;
+import Icon from "astro-icon";
+let { key, class: classes, showArrow } = Astro.props;
 ---
 
-<li class={`accordion-item accordion-item-${key} ${classes}`} aria-expanded="false" data-key={key}>
+<li
+    class={`accordion-item accordion-item-${key} ${classes}`}
+    aria-expanded="false"
+    data-key={key}
+>
     <button class="accordion-item--header w-full">
         <slot name="header" />
+        {
+            showArrow && (
+                <span class="accordion-item--arrow mr-2">
+                    <Icon name="chevron" class="w-[24px]" />
+                </span>
+            )
+        }
     </button>
     <div class="accordion-item--body">
         <slot name="body" />
@@ -16,5 +28,16 @@ let { key, class: classes } = Astro.props;
         overflow: hidden;
         max-height: 0;
         transition: max-height 0.3s ease-in-out;
+    }
+    .accordion-item .accordion-item--header {
+        @apply flex items-center justify-between;
+        .accordion-item--arrow {
+            @apply transition-transform duration-300;
+            transform: rotate(180deg);
+        }
+    }
+    .accordion-item.accordion-item--active .accordion-item--header .accordion-item--arrow {
+        transform: rotate(0deg);
+        transform-origin: center;
     }
 </style>
