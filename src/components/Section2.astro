@@ -1,5 +1,8 @@
 ---
 import Icon, { Sprite } from "astro-icon";
+import { Image } from "astro:assets";
+import WhyImg from "../icons/why_does_it_matter.png";
+import HieImg from "../icons/hie.png";
 ---
 
 <section class="py-10 bg-blue-light">
@@ -9,7 +12,8 @@ import Icon, { Sprite } from "astro-icon";
         </h2>
         <div class="grid grid-flow-col auto-cols-auto gap-5 mt-20">
             <div class="self-start px-12">
-                <div class="w-40 h-40 bg-red-50 rounded-full"></div>
+                <!-- <div class="w-40 h-40 bg-red-50 rounded-full"></div> -->
+                <Image src={WhyImg} alt="Illustration" class="w-44 h-44"/>
             </div>
             <div class="">
                 <h4 class="font-semibold text-green-accent text-xl">
@@ -49,7 +53,7 @@ import Icon, { Sprite } from "astro-icon";
                 </h4>
 
                 <ul class="mt-2 text-light list-outside -ml-2">
-                    <li class="flex">
+                    <li class="flex items-start">
                         <Icon name="arrow_right" class="w-8 flex-shrink-0" />
                         <span class="w-full"
                             ><b>Access and Connectivity</b> are key conditions
@@ -58,7 +62,7 @@ import Icon, { Sprite } from "astro-icon";
                         >
                     </li>
 
-                    <li class="mt-2 flex">
+                    <li class="mt-2 flex items-start">
                         <Icon name="arrow_right" class="w-8 flex-shrink-0" />
                         <span
                             ><b>Datafication and Digitalization</b> make
@@ -68,7 +72,7 @@ import Icon, { Sprite } from "astro-icon";
                         >
                     </li>
 
-                    <li class="mt-2 flex">
+                    <li class="mt-2 flex items-start">
                         <Icon name="arrow_right" class="w-8 flex-shrink-0" />
                         <span class="">
                             <b>The Media System</b> is At the center of a
@@ -79,29 +83,33 @@ import Icon, { Sprite } from "astro-icon";
                         </span>
                     </li>
 
-                    <li class="mt-2 flex">
+                    <li class="mt-2 flex items-start">
                         <Icon name="arrow_right" class="w-8 flex-shrink-0" />
-                        <strong>The News Media</strong> is represented by anchor
+                        <span>
+                            <b>The News Media</b> is represented by anchor
                         institutions that shape the flow and distribution of
                         information in media systems, analyzed along four key
                         dimensions: editorial (content), business or
                         organizational aspects (institution), professionalism
                         (norms/practices), and preparedness and resiliency
                         (people, institution, practices).
+                        </span>
                     </li>
 
-                    <li class="mt-2 flex">
-                        <Icon name="arrow_right" class="w-8 flex-shrink-0" />
-                        <strong>Transparency and Accountability</strong> are
-                        promoted by news media holding those in power
-                        accountable.
-                    </li>
-
-                    <li class="mt-2 flex">
+                    <li class="mt-2 flex items-start">
                         <Icon name="arrow_right" class="w-8 flex-shrink-0" />
                         <span>
-                            <strong
-                                >Anchor Institutions and Keystone Species</strong
+                            <b>Transparency and Accountability</b> are
+                        promoted by news media holding those in power
+                        accountable.
+                        </span>
+                    </li>
+
+                    <li class="mt-2 flex items-start">
+                        <Icon name="arrow_right" class="w-8 flex-shrink-0" />
+                        <span>
+                            <b
+                                >Anchor Institutions and Keystone Species</b
                             > are vitally important to ecological survival of
                             the ecosystem, sculpting the environment and helping
                             create a habitable environment for many other types
@@ -111,7 +119,73 @@ import Icon, { Sprite } from "astro-icon";
                 </ul>
             </div>
             <div class="self-center px-12">
-                <div class="w-40 h-40 bg-red-50 rounded-full"></div>
+                <!-- <div class="w-40 h-40 bg-red-50 rounded-full"></div> -->
+                <Image src={HieImg} alt="Illustration" class="w-44 h-44"/>
+            </div>
+        </div>
+        <div class="grid"></div>
+        <div class="grid grid-flow-col auto-cols-auto gap-5 mt-20">
+            <ul class="mt-2 text-light list-outside -ml-2">
+                <li class="flex items-start">
+                    <Icon name="arrow_right" class="w-8 flex-shrink-0" />
+                    <span class="w-full"
+                        >
+                        <b>Diversity and pluralism</b> along with transparency are characteristics of healthy systems and keystone species alike. These closely related features are important to all elements of the media system, from business models and ownership, to norms and skills, to editorial aspects such as content and languages, to the digital infrastructures of each outlet. 
+                    </span
+                    >
+                </li>
+                <li class="flex mt-2 items-start">
+                    <Icon name="arrow_right" class="w-8 flex-shrink-0" />
+                    <span class="w-full"
+                        >
+                        Similarly, <b>transparency</b> is a key feature that is relevant to all aspects of the system and critical to cultivating trust among components of the system and with the humans involved. 
+                    </span
+                    >
+                </li>
+                <li class="flex mt-2 items-start">
+                    <Icon name="arrow_right" class="w-8 flex-shrink-0" />
+                    <span class="w-full"
+                        >
+                        <b>The Private sector</b>, in particular advertising, is foundational to the business of media. Market research and audience measurement firms provide data and analysis needed to develop robust business models and understand audiences.
+                    </span
+                    >
+                </li>
+                <li class="flex mt-2 items-start">
+                    <Icon name="arrow_right" class="w-8 flex-shrink-0" />
+                    <span class="w-full"
+                        >
+                        <b>Civil society</b> provides spaces for community building, capacity building, norm development, advocacy, and protection. Keystone species include independent, self-regulatory, and professional bodies as well as press freedom monitoring groups.
+                    </span
+                    >
+                </li>
+                <li class="flex mt-2 items-start">
+                    <Icon name="arrow_right" class="w-8 flex-shrink-0" />
+                    <span class="w-full"
+                        >
+                        <b>Academia</b> provides both research and theory as well as a talent pipeline into the media system.
+                    </span
+                    >
+                </li>
+                <li class="flex mt-2 items-start">
+                    <Icon name="arrow_right" class="w-8 flex-shrink-0" />
+                    <span class="w-full"
+                        >
+                        <b>Public Sector</b> influences the broader environment in which the ecosystem exists. The legal regulatory system and levels of internet freedom shape the media system and its keystone species as well as the link between people, communities, and the media system. Access to information and public funding for public service media contribute to healthy information ecosystems.
+                    </span
+                    >
+                </li>
+                <li class="flex mt-2 items-start">
+                    <Icon name="arrow_right" class="w-8 flex-shrink-0" />
+                    <span class="w-full"
+                        >
+                        <b>Other key factors</b> for information ecosystems are access to information and norms. The proactive provision of information flows through the ecosystem, creating data, providing fodder for public service media and watchdog media, and enacting transparency.
+                    </span
+                    >
+                </li>
+                
+            </ul>
+            <div class="px-12">
+                <div class="w-44 h-44"/>
             </div>
         </div>
     </div>
