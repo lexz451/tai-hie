@@ -1,6 +1,10 @@
 ---
 import Icon from "astro-icon";
-const { bg, title, content, id, color } = Astro.props;
+import { getImage } from "astro:assets";
+const { bg, id, color } = Astro.props;
+
+const opBg = bg && await getImage({src: bg, format: "webp"});
+
 ---
 
 <div id={`${id}-modal`} class="modal fixed min-h-screen w-full">
@@ -13,7 +17,7 @@ const { bg, title, content, id, color } = Astro.props;
         class="absolute inset-0 bg-cover bg-center"
         style={`background-color: ${color}`}
     >
-        {bg && <img src={bg} alt="" class="w-full h-full object-cover" />}
+        {bg && <img src={opBg.src} alt="" class="w-full h-full object-cover" />}
     </div>
     <div class="absolute inset-0 bg-black opacity-20"></div>
     <div
@@ -27,6 +31,7 @@ const { bg, title, content, id, color } = Astro.props;
 
     @keyframes opening {
         from {
+            opacity: 0.25;
             clip-path: circle(0% at var(--x) var(--y));
         }
         to {
@@ -43,7 +48,7 @@ const { bg, title, content, id, color } = Astro.props;
         }
         to {
             clip-path: circle(0% at var(--x) var(--y));
-            opacity: 0.65;
+            opacity: 0.25;
             visibility: collapse;
         }
     }

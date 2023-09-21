@@ -30,7 +30,7 @@ const { title } = Astro.props;
 	<body>
 		<slot />
 		<Footer />
-		<Modal id="civil" bg={CivilBg.src}>
+		<Modal id="civil" bg={CivilBg}>
 			<ul class="text-white text-center">
 				<li class="text-2xl font-semibold">
 					Independent, self-regulatory professional <br /> bodies /
@@ -43,7 +43,7 @@ const { title } = Astro.props;
 				<li class="text-2xl font-semibold mt-4">Academia</li>
 			</ul>
 		</Modal>
-		<Modal id="key_factors" bg={KeyFBg.src}>
+		<Modal id="key_factors" bg={KeyFBg}>
 			<div
 				class="text-white grid grid-cols-2 grid-rows-2 gap-y-10 gap-x-20"
 			>
@@ -79,7 +79,7 @@ const { title } = Astro.props;
 				</div>
 			</div>
 		</Modal>
-		<Modal id="non_fiction" title="Title" content="Content" color="#91ffea">
+		<Modal id="non_fiction" color="#91ffea">
 			<div
 				class="grid grid-cols-2 grid-rows-2 gap-y-10 gap-x-20 text-white"
 			>
@@ -135,9 +135,7 @@ const { title } = Astro.props;
 		</Modal>
 		<Modal
 			id="key_stone"
-			title="Title"
-			content="Content"
-			bg={KeyStoneBg.src}
+			bg={KeyStoneBg}
 		>
 			<ul class="text-white text-center">
 				<li class="text-2xl font-semibold">Investigative</li>
@@ -152,9 +150,7 @@ const { title } = Astro.props;
 		</Modal>
 		<Modal
 			id="infrastructural"
-			title="Title"
-			content="Content"
-			bg={InfraBg.src}
+			bg={InfraBg}
 		>
 			<div class="grid grid-cols-3 container mx-auto">
 				<span
@@ -184,7 +180,7 @@ const { title } = Astro.props;
 				>
 			</div>
 		</Modal>
-		<Modal id="private" bg={PrivateBg.src}>
+		<Modal id="private" bg={PrivateBg}>
 			<ul class="text-white text-center">
 				<li class="text-2xl font-semibold">
 					Market Research & audience Measurement
@@ -196,7 +192,7 @@ const { title } = Astro.props;
 				<li class="text-2xl font-semibold mt-4">Advertising</li>
 			</ul>
 		</Modal>
-		<Modal id="public1" bg={PublicBg.src}>
+		<Modal id="public1" bg={PublicBg}>
 			<ul class="text-white text-center">
 				<li class="text-2xl font-semibold">Legal regulatory system</li>
 				<li class="text-2xl font-semibold mt-4">
@@ -207,7 +203,7 @@ const { title } = Astro.props;
 				</li>
 			</ul>
 		</Modal>
-		<Modal id="public2" title="Title" content="Content" bg={PublicBg.src}>
+		<Modal id="public2" title="Title" content="Content" bg={PublicBg}>
 			<ul class="text-white text-center">
 				<li class="text-2xl font-semibold">
 					Political interventionism
@@ -220,7 +216,7 @@ const { title } = Astro.props;
 				</li>
 			</ul>
 		</Modal>
-		<Modal id="media" title="Title" content="Content" bg={MediaBg.src}>
+		<Modal id="media" title="Title" content="Content" bg={MediaBg}>
 			<ul class="text-white text-center">
 				<li class="text-2xl font-semibold">Entertainment</li>
 				<li class="text-2xl font-semibold mt-4">

@@ -6,6 +6,16 @@ import CivilImg from "../images/civil.png";
 import InfraImg from "../images/infrastructural.png";
 import KeyStoneImg from "../images/keystone.png";
 import PublicImg from "../images/public.png";
+import { getImage } from "astro:assets";
+
+const opKeyFactorsImg = await getImage({src: KeyFactorsImg, format: 'webp'});
+const opMediaImg = await getImage({src: MediaImg, format: 'webp'});
+const opPrivateImg = await getImage({src: PrivateImg, format: 'webp'});
+const opCivilImg = await getImage({src: CivilImg, format: 'webp'});
+const opInfraImg =  await getImage({src: InfraImg, format: 'webp'});
+const opKeyStoneImg = await getImage({src: KeyStoneImg, format: 'webp'});
+const opPublicImg = await getImage({src: PublicImg, format: 'webp'});
+
 ---
 
 <div class="pyramid-container bg-blue-dark pt-10">
@@ -222,7 +232,7 @@ import PublicImg from "../images/public.png";
           patternTransform="translate(-.023 -694.726)"
           preserveAspectRatio="xMidYMid"
         >
-          <image xlink:href={InfraImg.src} />
+          <image xlink:href={opInfraImg.src} />
         </pattern>
         <pattern
           xlink:href="#b"
@@ -232,7 +242,7 @@ import PublicImg from "../images/public.png";
           patternTransform="translate(292.375 421.65)"
           preserveAspectRatio="xMidYMid"
         >
-          <image xlink:href={KeyStoneImg.src} />
+          <image xlink:href={opKeyStoneImg.src} />
         </pattern>
         <pattern
           xlink:href="#c"
@@ -242,7 +252,7 @@ import PublicImg from "../images/public.png";
           patternTransform="translate(-218.323 -57.205)"
           preserveAspectRatio="xMidYMid"
         >
-          <image xlink:href={PublicImg.src} />
+          <image xlink:href={opPublicImg.src} />
         </pattern>
         <pattern
           xlink:href="#c"
@@ -252,7 +262,7 @@ import PublicImg from "../images/public.png";
           patternTransform="translate(-218.323 -57.205)"
           preserveAspectRatio="xMidYMid"
         >
-          <image xlink:href={PublicImg.src} />
+          <image xlink:href={opPublicImg.src} />
         </pattern>
         <pattern
           xlink:href="#d"
@@ -262,7 +272,7 @@ import PublicImg from "../images/public.png";
           patternTransform="matrix(.2 0 0 .2 394.694 442.08)"
           preserveAspectRatio="xMidYMid"
         >
-          <image xlink:href={CivilImg.src} />
+          <image xlink:href={opCivilImg.src} />
         </pattern>
         <pattern
           xlink:href="#e"
@@ -272,7 +282,7 @@ import PublicImg from "../images/public.png";
           patternTransform="translate(-182.548 -102.694)"
           preserveAspectRatio="xMidYMid"
         >
-          <image xlink:href={PrivateImg.src} />
+          <image xlink:href={opPrivateImg.src} />
         </pattern>
         <pattern
           xlink:href="#f"
@@ -282,7 +292,7 @@ import PublicImg from "../images/public.png";
           patternTransform="matrix(.6 0 0 .6 471.365 149.53)"
           preserveAspectRatio="xMidYMid"
         >
-          <image xlink:href={MediaImg.src} />
+          <image xlink:href={opMediaImg.src} />
         </pattern>
         <pattern
           xlink:href="#g"
@@ -292,7 +302,7 @@ import PublicImg from "../images/public.png";
           patternTransform="matrix(.4 0 0 .4 -298.353 2.036)"
           preserveAspectRatio="xMidYMid"
         >
-          <image xlink:href={KeyFactorsImg.src} />
+          <image xlink:href={opKeyFactorsImg.src} />
         </pattern>
         <pattern
           id="g"
