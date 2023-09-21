@@ -1,15 +1,14 @@
---- 
-import Footer from '../components/Footer.astro';
-import '@fontsource-variable/inter';
-import Modal from '../components/Modal.astro';
-import CivilBg from '../images/civil.png';
-import InfraBg from '../images/infrastructural.png';
-import KeyFBg from '../images/key_factors.png';
-import MediaBg from '../images/media.png';
-import PrivateBg from '../images/private.png';
-import PublicBg from '../images/public.png';
-import KeyStoneBg from '../images/keystone.png';
-
+---
+import Footer from "../components/Footer.astro";
+import "@fontsource-variable/inter";
+import Modal from "../components/Modal.astro";
+import CivilBg from "../images/civil.png";
+import InfraBg from "../images/infrastructural.png";
+import KeyFBg from "../images/key_factors.png";
+import MediaBg from "../images/media.png";
+import PrivateBg from "../images/private.png";
+import PublicBg from "../images/public.png";
+import KeyStoneBg from "../images/keystone.png";
 
 interface Props {
 	title: string;
@@ -18,11 +17,11 @@ interface Props {
 const { title } = Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description">
+		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
@@ -30,15 +29,207 @@ const { title } = Astro.props;
 	</head>
 	<body>
 		<slot />
-		<Footer></Footer>
-		<Modal id="civil" title="Title" content="Content" bg={CivilBg.src}></Modal>
-		<Modal id="key_factors" title="Title" content="Content" bg={KeyFBg.src}></Modal>
-		<Modal id="non_fiction" title="Title" content="Content" color="#91ffea"></Modal>
-		<Modal id="key_stone" title="Title" content="Content" bg={KeyStoneBg.src}></Modal>
-		<Modal id="infrastructural" title="Title" content="Content" bg={InfraBg.src}></Modal>
-		<Modal id="private" title="Title" content="Content" bg={PrivateBg.src}></Modal>
-		<Modal id="public" title="Title" content="Content" bg={PublicBg.src}></Modal>
-		<Modal id="media" title="Title" content="Content" bg={MediaBg.src}></Modal>
+		<Footer />
+		<Modal id="civil" bg={CivilBg.src}>
+			<ul class="text-white text-center">
+				<li class="text-2xl font-semibold">
+					Independent, self-regulatory professional <br /> bodies /
+					associations / unions
+				</li>
+				<li class="text-2xl font-semibold mt-4">Monitoring groups</li>
+				<li class="text-2xl font-semibold mt-4">
+					Digital Rights Organizations
+				</li>
+				<li class="text-2xl font-semibold mt-4">Academia</li>
+			</ul>
+		</Modal>
+		<Modal id="key_factors" bg={KeyFBg.src}>
+			<div
+				class="text-white grid grid-cols-2 grid-rows-2 gap-y-10 gap-x-20"
+			>
+				<div>
+					<h4 class="text-2xl font-semibold text-center">
+						Access to information
+					</h4>
+					<ul class="text-center mt-5">
+						<li class="text-xl">Proactive provision</li>
+						<li class="text-xl">Freedom of Information Act</li>
+						<li class="text-xl">Procedural Efficiency</li>
+						<li class="text-xl">Officials Engage with press</li>
+					</ul>
+				</div>
+				<div>
+					<h4 class="text-2xl font-semibold text-center">
+						People & Communities
+					</h4>
+					<ul class="text-center mt-5">
+						<li class="text-xl">Information needs</li>
+						<li class="text-xl">Beliefs</li>
+						<li class="text-xl">Civic & Scientific literacy</li>
+						<li class="text-xl">Media & Information literacy</li>
+					</ul>
+				</div>
+				<div class="col-span-2">
+					<h4 class="text-2xl font-semibold text-center">Norms</h4>
+					<ul class="text-center mt-5">
+						<li class="text-xl">Transparency</li>
+						<li class="text-xl">Culture</li>
+						<li class="text-xl">Trust</li>
+					</ul>
+				</div>
+			</div>
+		</Modal>
+		<Modal id="non_fiction" title="Title" content="Content" color="#91ffea">
+			<div
+				class="grid grid-cols-2 grid-rows-2 gap-y-10 gap-x-20 text-white"
+			>
+				<div>
+					<h4 class="text-2xl font-semibold text-center">
+						Preparedness & Resilience
+					</h4>
+					<ul class="text-center mt-5">
+						<li class="text-xl">Safety & Security</li>
+						<li class="text-xl">Digital Infrastructure</li>
+						<li class="text-xl">Training & Capacity Building</li>
+						<li class="text-xl">Adaptability</li>
+						<li class="text-xl">SEO, metadata, digitalization</li>
+					</ul>
+				</div>
+				<div>
+					<h4 class="text-2xl font-semibold text-center">
+						Biz / Org
+					</h4>
+					<ul class="text-center mt-5">
+						<li class="text-xl">Economic model</li>
+						<li class="text-xl">Ownership & Independence</li>
+						<li class="text-xl">Sources & Proximity</li>
+						<!-- <li class="text-xl">Proximity</li> -->
+						<li class="text-xl">Relevance</li>
+						<li class="text-xl">Platforms</li>
+					</ul>
+				</div>
+				<div>
+					<h4 class="text-2xl font-semibold text-center">
+						Professionalism
+					</h4>
+					<ul class="text-center mt-5">
+						<li class="text-xl">Norms</li>
+						<li class="text-xl">Habits</li>
+						<li class="text-xl">Standards & Codes of Ethics</li>
+						<li class="text-xl">Training & Skills Buildings</li>
+					</ul>
+				</div>
+				<div>
+					<h4 class="text-2xl font-semibold text-center">
+						Editorial
+					</h4>
+					<ul class="text-center mt-5">
+						<li class="text-xl">Inclusivity</li>
+						<li class="text-xl">Languages</li>
+						<li class="text-xl">Factchecking & Verification</li>
+						<li class="text-xl">Independence</li>
+						<li class="text-xl">Coverage / Beats</li>
+					</ul>
+				</div>
+			</div>
+		</Modal>
+		<Modal
+			id="key_stone"
+			title="Title"
+			content="Content"
+			bg={KeyStoneBg.src}
+		>
+			<ul class="text-white text-center">
+				<li class="text-2xl font-semibold">Investigative</li>
+				<li class="text-2xl font-semibold mt-4">Watchdog</li>
+				<li class="text-2xl font-semibold mt-4">Public Service Media</li>
+				<li class="text-2xl font-semibold mt-4">Alternative</li>
+				<li class="text-2xl font-semibold mt-4">Local</li>
+				<li class="text-2xl font-semibold mt-4">National</li>
+			</ul>
+		</Modal>
+		<Modal
+			id="infrastructural"
+			title="Title"
+			content="Content"
+			bg={InfraBg.src}
+		>
+			<div class="grid grid-cols-3 container mx-auto">
+				<span
+					class="text-white font-bold text-2xl text-center self-center"
+					>DATIFICATION <br /> & <br /> DIGITALIZATION</span
+				>
+				<ul class="text-white self-center text-center">
+					<li class="text-xl font-semibold">
+						Labeling & Classification
+					</li>
+					<li class="text-xl font-semibold mt-4">
+						Platforms / Mediums
+					</li>
+					<li class="text-xl font-semibold mt-4">AI / ML</li>
+					<li class="text-xl font-semibold mt-4">Data</li>
+					<li class="text-xl font-semibold mt-4">Business Model</li>
+					<li class="text-xl font-semibold mt-4">
+						Authentification / Provenance
+					</li>
+					<li class="text-xl font-semibold mt-4">
+						Content Moderation
+					</li>
+				</ul>
+				<span
+					class="text-white font-bold text-2xl text-center self-center"
+					>ACCESS <br /> & <br /> CONNECTIVITY</span
+				>
+			</div>
+		</Modal>
+		<Modal id="private" bg={PrivateBg.src}>
+			<ul class="text-white text-center">
+				<li class="text-2xl font-semibold">
+					Market Research & audience Measurement
+				</li>
+				<li class="text-2xl font-semibold mt-4">
+					Teach / ICT companies
+				</li>
+				<li class="text-2xl font-semibold mt-4">Legal organizations</li>
+				<li class="text-2xl font-semibold mt-4">Advertising</li>
+			</ul>
+		</Modal>
+		<Modal id="public1" bg={PublicBg.src}>
+			<ul class="text-white text-center">
+				<li class="text-2xl font-semibold">Legal regulatory system</li>
+				<li class="text-2xl font-semibold mt-4">
+					Competition standards
+				</li>
+				<li class="text-2xl font-semibold mt-4">
+					Privacy / Data protection
+				</li>
+			</ul>
+		</Modal>
+		<Modal id="public2" title="Title" content="Content" bg={PublicBg.src}>
+			<ul class="text-white text-center">
+				<li class="text-2xl font-semibold">
+					Political interventionism
+				</li>
+				<li class="text-2xl font-semibold mt-4">
+					Press / internet freedom
+				</li>
+				<li class="text-2xl font-semibold mt-4">
+					Funding for Public Service Media
+				</li>
+			</ul>
+		</Modal>
+		<Modal id="media" title="Title" content="Content" bg={MediaBg.src}>
+			<ul class="text-white text-center">
+				<li class="text-2xl font-semibold">Entertainment</li>
+				<li class="text-2xl font-semibold mt-4">
+					Diversity & Pluralism
+				</li>
+				<li class="text-2xl font-semibold mt-4">
+					User-generated content
+				</li>
+				<li class="text-2xl font-semibold mt-4">Transparency</li>
+			</ul>
+		</Modal>
 	</body>
 </html>
 

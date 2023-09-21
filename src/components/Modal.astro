@@ -6,18 +6,20 @@ const { bg, title, content, id, color } = Astro.props;
 <div id={`${id}-modal`} class="modal fixed min-h-screen w-full">
     <div class="absolute z-10 top-0 right-0 mt-4 mr-4">
         <button class="close text-white text-3xl hover:text-gray-300">
-            <Icon name="close" class="w-8"></Icon>
+            <Icon name="close" class="w-8" />
         </button>
     </div>
-    <div class="absolute inset-0 bg-cover bg-center" style={`background-color: ${color}`}>
+    <div
+        class="absolute inset-0 bg-cover bg-center"
+        style={`background-color: ${color}`}
+    >
         {bg && <img src={bg} alt="" class="w-full h-full object-cover" />}
     </div>
     <div class="absolute inset-0 bg-black opacity-25"></div>
-    <div class="relative min-h-screen flex flex-col justify-center items-center">
-        <div class="text-white text-center">
-        <h1 class="text-5xl font-bold mb-4">{ title }</h1>
-        <p class="text-2xl">{ content }</p>
-        </div>
+    <div
+        class="relative min-h-screen flex flex-col justify-center items-center"
+    >
+        <slot></slot>
     </div>
 </div>
 
@@ -34,8 +36,8 @@ const { bg, title, content, id, color } = Astro.props;
 </style>
 
 <script>
-    import { activePyramidItem } from '../store/pyramid';
-	import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
+    import { activePyramidItem } from "../store/pyramid";
+    import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 
     function showModal(id) {
         const modal = document.getElementById(`${id}-modal`);
@@ -48,18 +50,16 @@ const { bg, title, content, id, color } = Astro.props;
         modal.classList.remove(`active`);
     }
 
-	activePyramidItem.subscribe((item) => {
+    activePyramidItem.subscribe((item) => {
         console.log(item);
-		if (item) {
-			const modal = document.getElementById(`${item}-modal`);
-			disableBodyScroll(modal, {
-				reserveScrollBarGap: true,
-			})
+        if (item) {
+            // const modal = document.getElementById(`${item}-modal`);
+            disableBodyScroll(document.body);
             showModal(item);
-		} else {
+        } else {
             enableBodyScroll(document.body);
         }
-	});
+    });
 
     const modals = document.querySelectorAll(`.modal`);
     for (let modal of modals) {
