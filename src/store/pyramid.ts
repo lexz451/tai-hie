@@ -1,3 +1,3 @@
 import { atom } from 'nanostores';
 
-export let activePyramidItem = atom<string | null>(null);
+export let activePyramidItem = atom<[string, [number, number]] | null>(null);

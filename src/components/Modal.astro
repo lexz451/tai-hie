@@ -15,23 +15,46 @@ const { bg, title, content, id, color } = Astro.props;
     >
         {bg && <img src={bg} alt="" class="w-full h-full object-cover" />}
     </div>
-    <div class="absolute inset-0 bg-black opacity-25"></div>
+    <div class="absolute inset-0 bg-black opacity-20"></div>
     <div
         class="relative min-h-screen flex flex-col justify-center items-center"
     >
-        <slot></slot>
+        <slot />
     </div>
 </div>
 
 <style lang="postcss">
-    .modal {
-        opacity: 0;
-        visibility: hidden;
-        transition: opacity 0.3s ease-in-out;
+
+    @keyframes opening {
+        from {
+            clip-path: circle(0% at var(--x) var(--y));
+        }
+        to {
+            clip-path: circle(100%);
+            opacity: 1;
+            visibility: visible;
+        }
     }
+
+    @keyframes close {
+        from {
+            clip-path: circle(100% at var(--x) var(--y));
+            opacity: 1;
+        }
+        to {
+            clip-path: circle(0% at var(--x) var(--y));
+            opacity: 0.65;
+            visibility: collapse;
+        }
+    }
+
+    .modal {
+        animation: close 0.25s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+        will-change: clip-path opacity visibility;
+    }
+    
     .modal.active {
-        opacity: 1;
-        visibility: visible;
+        animation: opening 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
     }
 </style>
 
@@ -39,23 +62,24 @@ const { bg, title, content, id, color } = Astro.props;
     import { activePyramidItem } from "../store/pyramid";
     import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 
-    function showModal(id) {
+    function showModal(id: string, coords: any[]) {
         const modal = document.getElementById(`${id}-modal`);
         modal.classList.add(`active`);
+        modal.style.setProperty(`--x`, `${coords[0]}px`);
+        modal.style.setProperty(`--y`, `${coords[1]}px`);
     }
 
-    function hideModal(id) {
-        console.log(id);
+    function hideModal(id: string) {
         const modal = document.getElementById(`${id}`);
         modal.classList.remove(`active`);
     }
 
     activePyramidItem.subscribe((item) => {
-        console.log(item);
         if (item) {
+            const [id, coords] = item;
             // const modal = document.getElementById(`${item}-modal`);
             disableBodyScroll(document.body);
-            showModal(item);
+            showModal(id, coords);
         } else {
             enableBodyScroll(document.body);
         }
