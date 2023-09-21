@@ -7,16 +7,30 @@ import EcoImg from "../icons/ecosystem.png";
 
 <section class="bg-light py-10">
     <div class="container max-w-6xl mx-auto px-4 py-5">
-        <h2 class="text-blue text-5xl font-medium pl-12">Want to know more <br/> about the project?</h2>
+        <h2 class="text-blue text-5xl font-medium pl-12">
+            Want to know more <br /> about the project?
+        </h2>
         <div class="grid grid-flow-col auto-cols-auto gap-5 mt-10">
             <div class="self-center px-12">
-                <Image src={EcoImg} alt="Illustration" class="w-44 h-44"/>
+                <Image src={EcoImg} alt="Illustration" class="w-44 h-44" />
                 <!-- <div class="w-40 h-40 bg-red-50 rounded-full"></div> -->
             </div>
             <Accordion defaultItem="1" class="px-12" id="s1-accordion">
-                <AccordionItem key="1" class="border-t-2 border-gray-200" showArrow={true}>
-                    <h2 slot="header" class="text-xl font-semibold my-4 text-green-accent text-left">Why an ecosystem?</h2>
-                    <ul slot="body" class="list-disc list-outside ml-5 pb-4 text-grey">
+                <AccordionItem
+                    key="1"
+                    class="border-t-2 border-gray-200"
+                    showArrow={true}
+                >
+                    <h2
+                        slot="header"
+                        class="text-xl font-semibold my-4 text-green-accent text-left"
+                    >
+                        Why an ecosystem?
+                    </h2>
+                    <ul
+                        slot="body"
+                        class="list-disc list-outside ml-5 pb-4 text-grey"
+                    >
                         <li>
                             A healthy ecosystem is dynamically balanced, with
                             diversity, resiliency, and integrity as defining
@@ -61,23 +75,82 @@ import EcoImg from "../icons/ecosystem.png";
                         </li>
                     </ul>
                 </AccordionItem>
-                <AccordionItem key="2" class="border-t-2 border-gray-200" showArrow={true}>
-                    <h2 slot="header" class="text-xl font-semibold my-4 text-green-accent text-left">What’s a healthy information ecosystem?</h2>
-                    <p slot="body" class="pb-4">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Nullam id felis et ipsum bibendum ultrices. Ut vel orci
-                        urna. Nulla facilisi. Pellentesque vitae ipsum eget enim
-                        mollis placerat.
+                <AccordionItem
+                    key="2"
+                    class="border-t-2 border-gray-200"
+                    showArrow={true}
+                >
+                    <h2
+                        slot="header"
+                        class="text-xl font-semibold my-4 text-green-accent text-left"
+                    >
+                        What’s a healthy information ecosystem?
+                    </h2>
+                    <p slot="body" class="pb-4 text-grey">
+                        A healthy information ecosystem is a well-balanced and
+                        diverse system where information is created, shared, and
+                        used responsibly. It allows individuals and communities
+                        to access and analyze information for decision-making
+                        and accountability. This ecosystem operates through
+                        complex interactions between various elements without a
+                        single controlling authority. It emphasizes the
+                        diversity of information sources and platforms, focusing
+                        on larger networks rather than individuals. The
+                        ecosystem can be analyzed at different levels, from
+                        local to global, with key aspects highlighted in a
+                        taxonomy graphic.
                     </p>
                 </AccordionItem>
-                <AccordionItem key="3" class="border-t-2 border-b-2 border-gray-200" showArrow={true}>
-                    <h2 slot="header" class="text-xl font-semibold my-4 text-green-accent text-left">Why does it matter?</h2>
-                    <p slot="body" class="pb-4">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Nullam id felis et ipsum bibendum ultrices. Ut vel orci
-                        urna. Nulla facilisi. Pellentesque vitae ipsum eget enim
-                        mollis placerat.
-                    </p>
+                <AccordionItem
+                    key="3"
+                    class="border-t-2 border-b-2 border-gray-200"
+                    showArrow={true}
+                >
+                    <h2
+                        slot="header"
+                        class="text-xl font-semibold my-4 text-green-accent text-left"
+                    >
+                        Why does it matter?
+                    </h2>
+                    <div slot="body" class="pb-4">
+                        <span
+                             class="text-grey">The effort to understand information ecosystems
+                            draws on several fields of research, including:
+                        </span>
+                        <ul class="list-decimal ml-5 text-grey mt-2">
+                            <li>Information ecology and ecosystem studies.</li>
+                            <li>
+                                Media development, journalism, disinformation,
+                                and platformization.
+                            </li>
+                            <li>
+                                Mapping specific news ecosystems and their
+                                entities, or the journalistic process.
+                            </li>
+                            <li>
+                                Community-centered, needs-based approaches for
+                                individuals and groups.
+                            </li>
+                            <li>
+                                Network analyses of mis-, dis-, and
+                                mal-information flows and influence operations.
+                            </li>
+
+                            <!-- <li>
+                                This visual is an abstraction and an analytical
+                                tool that shows multidimensional aspects of an
+                                information ecosystem and can be used at various
+                                levels of analysis.
+                            </li>
+
+                            <li>
+                                Ecosystem analysis focuses on the
+                                interconnectedness and dependencies of its
+                                components and how these shape flows of
+                                information.
+                            </li> -->
+                        </ul>
+                    </div>
                 </AccordionItem>
             </Accordion>
         </div>
