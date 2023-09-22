@@ -135,17 +135,13 @@ import Circles from "./Circles.astro";
     </section>
     <Circles />
     <section class="container max-w-6xl mx-auto px-10 py-5 mt-10">
-        <h2 class="text-light text-5xl font-medium">
+        <!-- <h2 class="text-light text-5xl font-medium">
             Boundaries <br /> of the ecosystem
-        </h2>
+        </h2> -->
         <div class="grid grid-flow-col auto-cols-auto gap-5 mt-10">
             <div>
                 <h4 class="font-semibold text-green-accent text-xl">
-                    Key factors: access to information, people and communities
-                    and norms help with the proactive provision of information
-                    flows through the ecosystem, creating data, providing fodder
-                    for public service media and watchdog media, and enacting
-                    transparency.
+                    Boundaries of the ecosystem
                 </h4>
                 <ul class="mt-5 text-light list-outside -ml-2">
                     <li class="flex items-start">
@@ -210,7 +206,7 @@ import Circles from "./Circles.astro";
                             healthy information ecosystems.
                         </span>
                     </li>
-                    <li class="flex mt-2 items-start">
+                    <!-- <li class="flex mt-2 items-start">
                         <Icon name="arrow_right" class="w-8 flex-shrink-0" />
                         <span class="w-full">
                             <b>Other key factors</b> for information ecosystems
@@ -220,61 +216,26 @@ import Circles from "./Circles.astro";
                             public service media and watchdog media, and
                             enacting transparency.
                         </span>
-                    </li>
+                    </li> -->
                 </ul>
+                <div class="mt-20">
+                    <h4 class="font-semibold text-green-accent text-xl">Key factors</h4>
+                    <p class="mt-5 text-white">
+                        Access to information, people and communities and norms help
+                        with the proactive provision of information flows through the
+                        ecosystem, creating data, providing fodder for public service
+                        media and watchdog media, and enacting transparency.
+                    </p>
+                </div>
             </div>
             <div class="px-12">
                 <div class="w-44 h-44"></div>
             </div>
         </div>
+        
     </section>
 </div>
-<script>
-    // import { gsap } from "gsap";
 
-    // const tl = gsap.timeline({
-    //     scrollTrigger: {
-    //         markers: true,
-    //         trigger: "#keystone-circles",
-    //         start: "center center",
-    //         end: "bottom top",
-    //         scrub: 1,
-    //         pin: true,
-    //     },
-    // })
-
-    // let circles = gsap.utils.toArray("#keystone-circles .circle");
-
-    // circles.forEach((circle, i) => {
-    //     let tl = gsap.timeline({
-    //         scrollTrigger: {
-    //             markers: true,
-    //             scroller: "body",
-    //             trigger: "#keystone-circles",
-    //             start: () => "top -" + window.innerHeight * (i + 0.5),
-    //             end: () => "+=" + window.innerHeight,
-    //             scrub: 1,
-    //             pin: true,
-    //             toggleActions: "play none reverse none",
-    //             invalidateOnRefresh: true,
-    //         },
-    //     });
-    //     // tl.fromTo(circle, {opacity: 0}, {opacity: 1, duration: 1});
-    // });
-
-    // gsap.timeline({
-    //     scrollTrigger: {
-    //         markers: true,
-    //         trigger: '#keystone-circles',
-    //         start: 'center center',
-    //         end: 'bottom top',
-    //         scrub: 1,
-    //         pin: true
-    //     },
-    //     opacity: 1,
-    //     duration: 1,
-    // });
-</script>
 <style lang="postcss">
     .keystone-circles-container {
         
