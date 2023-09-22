@@ -193,6 +193,15 @@ import Icon from "astro-icon";
 
     let circles = gsap.utils.toArray(".keystone-circles .circle");
 
+    const body = document.querySelector("body");
+    const obsv = new ResizeObserver(function () {
+        ScrollTrigger.refresh();
+    });
+
+    for (var i = 0; i < body.children.length; i++) {
+        obsv.observe(body.children[i]);
+    }
+
     gsap.timeline({
         scrollTrigger: {
             trigger: ".keystone-circles",
@@ -216,17 +225,25 @@ import Icon from "astro-icon";
         });
         const text = (circle as HTMLElement).querySelector("text");
         const ellipse = (circle as HTMLElement).querySelector("ellipse");
-        
-        tl.from(text as any, {
-            opacity: 0,
-            fontSize: 0,
-            translateY: 100,
-            delay: 0.5 * i,
-        }, 0).from(ellipse as any, {
-            opacity: 0,
-            scale: 0.95,
-            transformOrigin: "center",
-            delay: 0.5 * i,
-        }, 0);
+
+        tl.from(
+            text as any,
+            {
+                opacity: 0,
+                fontSize: 0,
+                translateY: 100,
+                delay: 0.5 * i,
+            },
+            0,
+        ).from(
+            ellipse as any,
+            {
+                opacity: 0,
+                scale: 0.95,
+                transformOrigin: "center",
+                delay: 0.5 * i,
+            },
+            0,
+        );
     });
 </script>
