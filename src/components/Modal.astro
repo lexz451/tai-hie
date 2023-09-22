@@ -3,14 +3,13 @@ import Icon from "astro-icon";
 import { getImage } from "astro:assets";
 const { bg, id, color } = Astro.props;
 
-const opBg = bg && await getImage({src: bg, format: "webp"});
-
+const opBg = bg && (await getImage({ src: bg, format: "webp" }));
 ---
 
 <div id={`${id}-modal`} class="modal fixed min-h-screen w-full">
     <div class="absolute z-10 top-0 right-0 mt-4 mr-4">
         <button class="close text-white text-3xl hover:text-gray-300">
-            <Icon name="close" class="w-8" />
+            <Icon name="close" class="w-6" />
         </button>
     </div>
     <div
@@ -29,15 +28,20 @@ const opBg = bg && await getImage({src: bg, format: "webp"});
 
 <style lang="postcss">
 
-    @keyframes opening {
+    .modal {
+        visibility: hidden;
+        transform: translate3d(0, 0, 0);
+        will-change: clip-path opacity visibility;
+    }
+
+    /* @keyframes opening {
         from {
-            opacity: 0.25;
+            opacity: 0;
             clip-path: circle(0% at var(--x) var(--y));
         }
         to {
             clip-path: circle(100%);
             opacity: 1;
-            visibility: visible;
         }
     }
 
@@ -48,35 +52,65 @@ const opBg = bg && await getImage({src: bg, format: "webp"});
         }
         to {
             clip-path: circle(0% at var(--x) var(--y));
-            opacity: 0.25;
-            visibility: collapse;
+            opacity: 0;
         }
-    }
+    } */
 
-    .modal {
+    /* .modal {
         animation: close 0.25s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
         will-change: clip-path opacity visibility;
     }
     
     .modal.active {
         animation: opening 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-    }
+    } */
 </style>
 
 <script>
     import { activePyramidItem } from "../store/pyramid";
     import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
+    import { gsap } from "gsap";
 
     function showModal(id: string, coords: any[]) {
         const modal = document.getElementById(`${id}-modal`);
         modal.classList.add(`active`);
-        modal.style.setProperty(`--x`, `${coords[0]}px`);
-        modal.style.setProperty(`--y`, `${coords[1]}px`);
+        const [x, y] = coords;
+        modal.style.setProperty(`--x`, `${x}px`);
+        modal.style.setProperty(`--y`, `${y}px`);
+
+        gsap.fromTo(
+            modal,
+            { 
+                // opacity: 0.5, 
+                clipPath: "circle(0% at var(--x) var(--y))", },
+            {
+                visibility: "visible",
+                // opacity: 1,
+                clipPath: "circle(100vw at var(--x) var(--y))",
+                duration: 0.8,
+                ease: "power2.out",
+            },
+        )
     }
 
     function hideModal(id: string) {
         const modal = document.getElementById(`${id}`);
         modal.classList.remove(`active`);
+        gsap.fromTo(
+            modal,
+            { 
+                // opacity: 1 
+            },
+            {
+                // opacity: 0,
+                animationTimingFunction: "cubic-bezier(0.075, 0.82, 0.165, 1)",
+                duration: 0.5,
+                ease: "power4.out",
+                clipPath: "circle(0% at var(--x) var(--y))",
+            },
+        ).then(() => {
+            modal.style.visibility = "hidden";
+        });
     }
 
     activePyramidItem.subscribe((item) => {

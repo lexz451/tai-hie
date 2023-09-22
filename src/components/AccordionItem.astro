@@ -1,10 +1,11 @@
 ---
 import Icon from "astro-icon";
-let { key, class: classes, showArrow } = Astro.props;
+let { key, class: classes, showArrow, defaultOpen } = Astro.props;
 ---
 
 <li
-    class={`accordion-item accordion-item-${key} ${classes}`}
+    id={`accordion-item-${key}`}
+    class={`accordion-item ${defaultOpen ? "accordion-item--active" : ""} ${classes}`}
     aria-expanded="false"
     data-key={key}
 >
@@ -18,10 +19,52 @@ let { key, class: classes, showArrow } = Astro.props;
             )
         }
     </button>
-    <div class="accordion-item--body">
+    <div class="accordion-item--body" style={`max-height: ${defaultOpen ? '100%' : 0};`}>
         <slot name="body" />
     </div>
 </li>
+
+<script define:vars={{key}}>
+    const accordionItem = document.getElementById(`accordion-item-${key}`);
+    
+    if (accordionItem.classList.contains("accordion-item--active")) {
+        open(accordionItem)
+    } else {
+        close(accordionItem)
+    }
+
+    function open(item) {
+        item.classList.add("accordion-item--active");
+        item.setAttribute("aria-expanded", true);
+        const accordionItemBody = item.querySelector(".accordion-item--body");
+        accordionItemBody.style.maxHeight = `${accordionItemBody.scrollHeight}px`;
+    }
+
+    function close(item) {
+        item.classList.remove("accordion-item--active");
+        item.setAttribute("aria-expanded", false);
+        const accordionItemBody = item.querySelector(".accordion-item--body");
+        accordionItemBody.style.maxHeight = 0;
+    }
+
+    function closeOthers() {
+        const accordionItems = document.querySelectorAll(".accordion-item");
+        accordionItems.forEach((item) => {
+            if (item !== accordionItem) {
+                close(item);
+            }
+        });
+    }
+    
+    accordionItem.addEventListener("click", () => {
+        if (accordionItem.classList.contains("accordion-item--active")) {
+            close(accordionItem);
+        } else {
+            open(accordionItem);
+            closeOthers();
+        }
+    });
+</script>
 
 <style lang="postcss">
     .accordion-item .accordion-item--body {
@@ -36,6 +79,7 @@ let { key, class: classes, showArrow } = Astro.props;
             transform: rotate(180deg);
         }
     }
+
     .accordion-item.accordion-item--active .accordion-item--header .accordion-item--arrow {
         transform: rotate(0deg);
         transform-origin: center;
