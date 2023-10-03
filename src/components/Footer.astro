@@ -3,7 +3,7 @@ import { Sprite } from "astro-icon";
 ---
 
 <footer class="bg-blue-dark">
-    <div class="grid grid-cols-3 container mx-auto  py-12">
+    <div class="grid grid-cols-1 md:grid-cols-3 container mx-auto max-w-5xl px-5 py-20">
         <div>
             <Sprite.Provider>
                 <Sprite
@@ -12,7 +12,7 @@ import { Sprite } from "astro-icon";
                 />
             </Sprite.Provider>
         </div>
-        <div>
+        <div class="mt-10 md:mt-0">
             <nav class="flex flex-col">
                 <a class="text-green-accent text-lg font-semibold"
                     >Healthy ecosystem</a
@@ -28,7 +28,7 @@ import { Sprite } from "astro-icon";
                 >
             </nav>
         </div>
-        <div class="">
+        <div class="mt-10 md:mt-0">
             <span class="text-lg text-green-accent font-semibold">Credits</span>
             <p class="mt-4 text-light">
                 <b>Dr. Courtney C. Radsch</b> is a fellow at UCLA Institute for
@@ -36,7 +36,7 @@ import { Sprite } from "astro-icon";
                 Technology, and she writes and speaks about technology, media,
                 and rights.
             </p>
-            <p class="mt-4 text-light">
+            <p class="mt-4 text-light font-light">
                 <b>The Transparency and Accountability Initiative (TAI)</b> is a donor
                 collaborative working toward a democratic world where power and
                 resources are more equally distributed; people are informed and

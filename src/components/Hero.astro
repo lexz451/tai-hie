@@ -4,12 +4,12 @@ import Navbar from "./Navbar.astro";
 ---
 
 <Navbar />
-<div class="grid grid-cols-3 gap-4">
-    <div class="col-span-2 col-start-2">
-        <h1 class="text-4xl text-green-accent font-medium">
+<div class="grid grid-cols-3 gap-4 px-4 mt-10">
+    <div class="col-span-3 md:col-span-2 md:col-start-2">
+        <h1 class="text-5xl text-green-accent font-medium">
             Discover the power of a Healty Information Ecosystem
         </h1>
-        <p class="mt-4 text-light">
+        <p class="mt-10 text-lg text-light font-light">
             Defined by diversity, resiliency, and integrity, a healthy ecosystem
             is dynamically balanced. Using a systems-based approach, we can
             improve resource allocation, identify gaps, and design more
@@ -20,12 +20,22 @@ import Navbar from "./Navbar.astro";
         </p>
     </div>
 </div>
-<div class="grid grid-cols-3 mt-20 gap-5">
+<div class="grid md:grid-cols-3 mt-10 md:mt-20 gap-5 px-4">
     <video class="bg-blue-light aspect-video rounded-3xl col-span-2 w-full"
     ></video>
-    <div class="mx-10 mt-auto">
-        <Icon class="w-24 text-green-accent rounded-full ring-green-accent ring-2" pack="mdi" name="play"></Icon>
-        <h3 class="text-green-accent text-3xl mt-10 font-medium">How does this work?</h3>
-        <p class="text-light text-lg mt-5">Explainer on healthy ecosystem, its concept and how it works</p>
+    <div class="md:ml-10 mt-auto flex md:flex-col items-center md:items-start gap-5">
+        <Icon
+            class="w-14 h-14 flex-shrink-0 text-green-accent rounded-full ring-green-accent ring-2"
+            pack="mdi"
+            name="play"
+        />
+        <div>
+            <h3 class="text-green-accent text-2xl md:text-3xl font-normal">
+                How does this work?
+            </h3>
+            <p class="text-light text-base font-light md:text-lg mt-2">
+                Explainer on healthy ecosystem, its concept and how it works
+            </p>
+        </div>
     </div>
 </div>

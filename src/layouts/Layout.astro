@@ -9,6 +9,7 @@ import MediaBg from "../images/media.png";
 import PrivateBg from "../images/private.png";
 import PublicBg from "../images/public.png";
 import KeyStoneBg from "../images/keystone.png";
+import { SEO } from "astro-seo";
 
 interface Props {
 	title: string;
@@ -25,7 +26,9 @@ const { title } = Astro.props;
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
+		<SEO
+			title={title}>
+		</SEO>
 	</head>
 	<body>
 		<slot />
