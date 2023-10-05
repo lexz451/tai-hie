@@ -185,6 +185,8 @@ import Icon from "astro-icon";
     import { gsap } from "gsap";
     import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+    const isMobile = window.innerWidth < 768;
+
     gsap.registerPlugin(ScrollTrigger);
 
     let circles = gsap.utils.toArray(".keystone-circles .circle");
@@ -201,8 +203,8 @@ import Icon from "astro-icon";
     gsap.timeline({
         scrollTrigger: {
             trigger: ".keystone-circles",
-            // markers: true,
-            start: "center center",
+            markers: true,
+            start: !isMobile ? "center center" : "top top",
             end: "+=" + (circles.length - 1) * window.innerHeight,
             scrub: true,
             pin: true,
