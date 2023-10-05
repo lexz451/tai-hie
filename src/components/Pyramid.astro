@@ -292,20 +292,20 @@ const opPublicImg = await getImage({ src: PublicImg, format: "webp" });
   };
 
   if (!isMobile) {
-    gsap.timeline({
-      scrollTrigger: {
-        markers: true,
-        trigger: "#pyramid-container",
-        start: "top top",
-        end: "bottom center",
-        scrub: true,
-        pin: "#pyramid",
-      },
-    }).from("#pyramid .riseAnim", {
-      y: 50,
-    }).from("#pyramid .plantsAnim", {
-      y: 410,
-    })
+    // gsap.timeline({
+    //   scrollTrigger: {
+    //     markers: true,
+    //     trigger: "#pyramid-container",
+    //     start: "top top",
+    //     end: "bottom center",
+    //     scrub: true,
+    //     pin: "#pyramid",
+    //   },
+    // }).from("#pyramid .riseAnim", {
+    //   // y: 50,
+    // }).from("#pyramid .plantsAnim", {
+    //   // y: 410,
+    // })
 
 
     // gsap.from("#pyramid .riseAnim", {
