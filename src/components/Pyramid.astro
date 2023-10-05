@@ -284,7 +284,7 @@ const opPublicImg = await getImage({ src: PublicImg, format: "webp" });
 
   const setActiveCircle = (id: string, active: boolean) => {
     const circle = document.querySelector(`circle[data-id="${id}"]`);
-    circle.setAttribute("r", active ? "12px" : "8px");
+    circle.setAttribute("r", active ? "15px" : "8px");
     circle.setAttribute(
       "fill",
       active ? "#fafafa" : circle.getAttribute("data-fill"),
@@ -382,7 +382,7 @@ const opPublicImg = await getImage({ src: PublicImg, format: "webp" });
       width: 100%;
       @apply bg-blue-dark pt-[1rem] px-4 absolute md:relative;
       text {
-        @apply font-[1.6rem] md:font-[18px];
+        @apply text-[1.5rem] md:text-[18px];
       }
 
       circle ~ circle {
