@@ -19,7 +19,7 @@ const opPublicImg = await getImage({ src: PublicImg, format: "webp" });
 ---
 
 <div id="pyramid-container" class="pyramid-container bg-blue-dark pt-10">
-  <div class="container mx-auto max-w-6xl mt-16 md:mt-20">
+  <div class="min-h-screen">
     <div id="scroller" class="flex flex-col gap-10 px-6 md:hidden">
       <div
         id="key_factors"
@@ -162,13 +162,13 @@ const opPublicImg = await getImage({ src: PublicImg, format: "webp" });
       <div id="private" class="scroller-section">
         <div class="relative p-10 rounded-lg overflow-hidden">
           <img
-            src={opPublicImg.src}
+            src={opPrivateImg.src}
             class="absolute left-0 top-0 w-full h-full object-cover"
           />
           <h2
             class="uppercase text-white font-bold text-2xl mb-10 text-center z-10 relative"
           >
-            News / Non-fiction media
+            Private sector
           </h2>
           <ul class="text-white text-center z-10 relative">
             <li class="text-xl font-bold leading-tight">
@@ -347,9 +347,7 @@ const opPublicImg = await getImage({ src: PublicImg, format: "webp" });
       .timeline({
         scrollTrigger: {
           trigger: "#pyramid",
-          pin: "#pyramid",
-          pinType: "fixed",
-          pinSpacing: true,
+          pin: "#pyramid-container",
           start: "bottom bottom",
           scrub: true,
         },
@@ -408,8 +406,9 @@ const opPublicImg = await getImage({ src: PublicImg, format: "webp" });
     position: relative;
     #pyramid {
       bottom: 0;
-      width: 100%;
-      @apply bg-blue-dark pt-[1rem] px-4 absolute md:relative;
+      left: 0;
+      right: 0;
+      @apply bg-blue-dark md:bg-transparent pt-[1rem] md:pt-0 px-4 md:px-0 absolute mx-auto max-w-5xl;
       text {
         @apply text-[1.5rem] md:text-[18px];
       }
