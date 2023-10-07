@@ -290,7 +290,7 @@ const opPublicImg = await getImage({ src: PublicImg, format: "webp" });
           <h2
             class="uppercase text-white font-bold text-2xl mb-10 text-center z-10 relative"
           >
-          INFRASTRUCTURAL COMPONENTS
+            INFRASTRUCTURAL COMPONENTS
           </h2>
           <div class="relative z-10">
             <h4
@@ -343,21 +343,29 @@ const opPublicImg = await getImage({ src: PublicImg, format: "webp" });
   };
 
   if (!isMobile) {
-    gsap
-      .timeline({
-        scrollTrigger: {
-          trigger: "#pyramid",
-          pin: "#pyramid-container",
-          start: "bottom bottom",
-          scrub: true,
-        },
-      })
-      .from("#pyramid .riseAnim", {
-        y: 50,
-      })
-      .from("#pyramid .plantsAnim", {
-        y: 410,
-      });
+    gsap.from("#pyramid .riseAnim", {
+      y: 50,
+      order: 1,
+      scrollTrigger: {
+        trigger: "#pyramid",
+        start: "top center",
+        end: "top top",
+        scrub: true,
+        // markers: true,
+      },
+    });
+
+    gsap.from("#pyramid .plantsAnim", {
+      y: 410,
+      delay: 1,
+      scrollTrigger: {
+        trigger: "#pyramid",
+        start: "top center",
+        end: "top top",
+        scrub: true,
+        // markers: true,
+      },
+    });
 
     const circles = pyramid.querySelectorAll("circle ~ circle");
     for (let c of circles) {
