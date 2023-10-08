@@ -6,8 +6,9 @@ import CivilImg from "../images/civil.png";
 import InfraImg from "../images/infrastructural.png";
 import KeyStoneImg from "../images/keystone.png";
 import PublicImg from "../images/public.png";
-import { getImage } from "astro:assets";
+import NonFictionImg from "../images/non-fiction.png";
 import PyramidObj from "./PyramidObj.astro";
+import { getImage } from "astro:assets";
 
 const opKeyFactorsImg = await getImage({ src: KeyFactorsImg, format: "webp" });
 const opMediaImg = await getImage({ src: MediaImg, format: "webp" });
@@ -16,9 +17,16 @@ const opCivilImg = await getImage({ src: CivilImg, format: "webp" });
 const opInfraImg = await getImage({ src: InfraImg, format: "webp" });
 const opKeyStoneImg = await getImage({ src: KeyStoneImg, format: "webp" });
 const opPublicImg = await getImage({ src: PublicImg, format: "webp" });
+const opNonFictionImg = await getImage({
+  src: NonFictionImg,
+  format: "webp",
+});
 ---
 
-<div id="pyramid-container" class="pyramid-container bg-blue-dark pt-10">
+<div
+  id="pyramid-container"
+  class="pyramid-container bg-blue-dark pt-10 md:pt-0"
+>
   <div class="min-h-screen">
     <div id="scroller" class="flex flex-col gap-10 px-6 md:hidden">
       <div
@@ -108,14 +116,19 @@ const opPublicImg = await getImage({ src: PublicImg, format: "webp" });
       </div>
       <div id="non_fiction" class="scroller-section">
         <div
-          class="grid grid-cols-1 gap-y-10 bg-[#91ffea] p-10 rounded-lg overflow-hidden"
+          class="grid grid-cols-1 gap-y-10 bg-[#91ffea] p-10 rounded-lg overflow-hidden relative"
         >
+          <img
+            class="absolute left-0 top-0 w-full h-full object-cover"
+            src={opNonFictionImg.src}
+            alt="bg"
+          />
           <h2
             class="uppercase text-blue-dark-translucent font-bold text-2xl mb-5 text-center z-10 relative"
           >
             News / Non-fiction media
           </h2>
-          <div class="text-blue-dark-translucent">
+          <div class="text-blue-dark-translucent z-10">
             <h4 class="text-xl font-bold uppercase">
               Preparedness & Resilience
             </h4>
@@ -127,7 +140,7 @@ const opPublicImg = await getImage({ src: PublicImg, format: "webp" });
               <li class="">SEO, metadata, digitalization</li>
             </ul>
           </div>
-          <div class="text-blue-dark-translucent">
+          <div class="text-blue-dark-translucent z-10">
             <h4 class="text-xl font-bold uppercase">Biz / Org</h4>
             <ul class="list-disc mt-5">
               <li class="">Economic model</li>
@@ -138,7 +151,7 @@ const opPublicImg = await getImage({ src: PublicImg, format: "webp" });
               <li class="">Platforms</li>
             </ul>
           </div>
-          <div class="text-blue-dark-translucent">
+          <div class="text-blue-dark-translucent z-10">
             <h4 class="text-xl font-bold uppercase">Professionalism</h4>
             <ul class="list-disc mt-5">
               <li class="">Norms</li>
@@ -147,7 +160,7 @@ const opPublicImg = await getImage({ src: PublicImg, format: "webp" });
               <li class="">Training & Skills Buildings</li>
             </ul>
           </div>
-          <div class="text-blue-dark-translucent">
+          <div class="text-blue-dark-translucent z-10">
             <h4 class="text-xl font-bold uppercase">Editorial</h4>
             <ul class="list-disc mt-5">
               <li class="">Inclusivity</li>
@@ -416,7 +429,7 @@ const opPublicImg = await getImage({ src: PublicImg, format: "webp" });
       bottom: 0;
       left: 0;
       right: 0;
-      @apply bg-blue-dark md:bg-transparent pt-[1rem] md:pt-0 px-4 md:px-0 absolute mx-auto max-w-5xl;
+      @apply bg-blue-dark md:bg-transparent pt-[1rem] md:pt-0 px-4 md:px-0 absolute mx-auto md:h-[calc(100vh-6rem)];
       text {
         @apply text-[1.5rem] md:text-[18px];
       }

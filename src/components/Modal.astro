@@ -32,38 +32,8 @@ const opBg = bg && (await getImage({ src: bg, format: "webp" }));
         visibility: hidden;
         transform: translate3d(0, 0, 0);
         will-change: clip-path opacity visibility;
+        z-index: 1000;
     }
-
-    /* @keyframes opening {
-        from {
-            opacity: 0;
-            clip-path: circle(0% at var(--x) var(--y));
-        }
-        to {
-            clip-path: circle(100%);
-            opacity: 1;
-        }
-    }
-
-    @keyframes close {
-        from {
-            clip-path: circle(100% at var(--x) var(--y));
-            opacity: 1;
-        }
-        to {
-            clip-path: circle(0% at var(--x) var(--y));
-            opacity: 0;
-        }
-    } */
-
-    /* .modal {
-        animation: close 0.25s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
-        will-change: clip-path opacity visibility;
-    }
-    
-    .modal.active {
-        animation: opening 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-    } */
 </style>
 
 <script>
