@@ -4,31 +4,41 @@ import InfraBg from "../../images/infrastructural.png";
 ---
 
 <Modal id="infrastructural" bg={InfraBg}>
-    <div class="grid grid-cols-3 container mx-auto">
-        <h4
-            class="text-white font-bold text-5xl text-center self-center leading-tight"
-            >Datification & <br /> Digitalization</h4
+    <div class="grid grid-cols-3 container mx-auto gap-y-10 gap-x-10">
+        <div class="bg-black bg-opacity-50 p-10 relative flex flex-col justify-center">
+            <span
+                class="absolute w-10 h-10 rounded-full bg-white -top-5 left-10"
+            ></span>
+            <h4
+                class="text-white font-bold text-4xl text-center self-center leading-tight"
+            >
+                Datification & <br /> Digitalization
+            </h4>
+        </div>
+        <div class="bg-black bg-opacity-50 p-10 relative">
+            <span
+                class="absolute w-10 h-10 rounded-full bg-white -top-5 left-10"
+            ></span>
+            <ul class="text-white self-center text-center">
+                <li class="">Labeling & Classification</li>
+                <li class="mt-2">Platforms / Mediums</li>
+                <li class="mt-2">AI / ML</li>
+                <li class="mt-2">Data</li>
+                <li class="mt-2">Business Model</li>
+                <li class="mt-2">Authentification / Provenance</li>
+                <li class="mt-2">Content Moderation</li>
+            </ul>
+        </div>
+        
+        <div class="bg-black bg-opacity-50 p-10 relative flex flex-col justify-center">
+            <span
+                class="absolute w-10 h-10 rounded-full bg-white -top-5 left-10"
+            ></span>
+            <h4
+            class="text-white font-bold text-4xl text-center self-center leading-tight"
         >
-        <ul class="text-white self-center text-center">
-            <li class="text-xl">
-                Labeling & Classification
-            </li>
-            <li class="text-xl mt-2">
-                Platforms / Mediums
-            </li>
-            <li class="text-xl mt-2">AI / ML</li>
-            <li class="text-xl mt-2">Data</li>
-            <li class="text-xl mt-2">Business Model</li>
-            <li class="text-xl mt-2">
-                Authentification / Provenance
-            </li>
-            <li class="text-xl mt-2">
-                Content Moderation
-            </li>
-        </ul>
-        <h4
-            class="text-white font-bold text-5xl text-center self-center leading-tight"
-            >Access & <br /> Connectivity</h4
-        >
+            Access & <br /> Connectivity
+        </h4>
+        </div>
     </div>
 </Modal>
