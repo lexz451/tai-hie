@@ -5,18 +5,18 @@ import AccordionItem from "./AccordionItem.astro";
 import EcoImg from "../icons/ecosystem.png";
 ---
 
-<section class="bg-light py-16 md:py-20">
+<section id="the-project" class="bg-light py-16 md:py-20">
     <div class="container max-w-5xl mx-auto px-5 md:px-10 md:py-5">
         <h2 class="text-blue text-3xl md:text-5xl font-semibold">
             Want to know more <br /> about the project?
         </h2>
         <div class="grid grid-flow-col auto-cols-auto gap-5 mt-10 md:mt-20">
-            <div class="self-center hidden md:block px-12">
+            <div class="self-center hidden md:block pr-12">
                 <Image
                     src={EcoImg}
                     format="webp"
                     alt="Illustration"
-                    class="w-44 h-44"
+                    class="w-32 h-32 md:w-44 md:h-44"
                 />
                 <!-- <div class="w-40 h-40 bg-red-50 rounded-full"></div> -->
             </div>
@@ -36,15 +36,15 @@ import EcoImg from "../icons/ecosystem.png";
                     <div slot="body" class="pb-4 text-grey">
                         <ul class="list-disc list-outside ml-5">
                             <li>
-                                A healthy ecosystem is dynamically balanced,
-                                with diversity, resiliency, and integrity as
-                                defining characteristics.
-                            </li>
-                            <li class="mt-2">
                                 An ecosystem is a dynamic and flexible network
                                 comprising interconnected systems and
                                 heterogeneous species, including actors,
                                 institutions, and technologies.
+                            </li>
+                            <li class="mt-2">
+                                A healthy ecosystem is dynamically balanced,
+                                with diversity, resiliency, and integrity as
+                                defining characteristics.
                             </li>
                             <li class="mt-2">
                                 Coexistence and cooperative competition among
@@ -65,8 +65,7 @@ import EcoImg from "../icons/ecosystem.png";
                                 and practices.
                             </li>
                         </ul>
-                        <span
-                            class="font-semibold mt-4 block"
+                        <span class="font-semibold mt-4 block"
                             >The effort to understand information ecosystems
                             draws on several fields of research, including:
                         </span>
@@ -102,20 +101,28 @@ import EcoImg from "../icons/ecosystem.png";
                     >
                         What’s a healthy information ecosystem?
                     </h2>
-                    <p slot="body" class="pb-4 text-grey">
-                        A healthy information ecosystem is a well-balanced and
-                        diverse system where information is created, shared, and
-                        used responsibly. It allows individuals and communities
-                        to access and analyze information for decision-making
-                        and accountability. A healthy information ecosystem
-                        operates through complex interactions between various
-                        elements without a single controlling authority. It
-                        emphasizes the diversity of information sources and
-                        platforms, focusing on larger networks rather than
-                        individuals. The ecosystem can be analyzed at different
-                        levels, from local to global, with key aspects
-                        highlighted in a taxonomy graphic.
-                    </p>
+                    <div slot="body" class="pb-4 text-grey">
+                        <p class="mb-2">
+                            A healthy information ecosystem is a well-balanced
+                            and diverse system where information is created,
+                            shared, and used responsibly. It allows individuals
+                            and communities to access and analyze information
+                            for decision-making and accountability.
+                        </p>
+                        <p class="mb-2">
+                            A healthy information ecosystem operates through
+                            complex interactions between various elements
+                            without a single controlling authority. It
+                            emphasizes the diversity of information sources and
+                            platforms, focusing on larger networks rather than
+                            individuals.
+                        </p>
+                        <p>
+                            The ecosystem can be analyzed at different levels,
+                            from local to global, with key aspects highlighted
+                            in a taxonomy graphic.
+                        </p>
+                    </div>
                 </AccordionItem>
                 <AccordionItem
                     key="3"
@@ -128,23 +135,31 @@ import EcoImg from "../icons/ecosystem.png";
                     >
                         Why does it matter?
                     </h2>
-                    <p slot="body" class="pb-4 text-grey">
-                        Information ecosystems are a close reflection of our
-                        interconnected world. Any ecosystem thrives on balance,
-                        diversity, and resilience where various species can
-                        coexist and interact. The same principles apply to
-                        information ecosystems. Adopting a systems-based
-                        approach enhances awareness of resource allocation,
-                        identifies gaps, and uncovers the interactions between
-                        different funders and programming so that they can
-                        design more meaningful and effective objective-oriented
-                        interventions and support. A reactive response alone is
-                        insufficient: Collectively, funders need to think about
-                        how to better support all the elements of the ecosystem
-                        and how the streams of programming fit together. This is
-                        the only way to live in an environment where information
-                        nurtures, empowers, and sustains us all.
-                    </p>
+                    <div slot="body" class="pb-4 text-grey">
+                        <p class="mb-2">
+                            Information ecosystems are a close reflection of our
+                            interconnected world. Any ecosystem thrives on
+                            balance, diversity, and resilience where various
+                            species can coexist and interact. The same
+                            principles apply to information ecosystems.
+                        </p>
+                        <p class="mb-2">
+                            Adopting a systems-based approach enhances awareness
+                            of resource allocation, identifies gaps, and
+                            uncovers the interactions between different funders
+                            and programming so that they can design more
+                            meaningful and effective objective-oriented
+                            interventions and support.
+                        </p>
+                        <p>
+                            A reactive response alone is insufficient:
+                            Collectively, funders need to think about how to
+                            better support all the elements of the ecosystem and
+                            how the streams of programming fit together. This is
+                            the only way to live in an environment where
+                            information nurtures, empowers, and sustains us all.
+                        </p>
+                    </div>
                 </AccordionItem>
             </Accordion>
         </div>

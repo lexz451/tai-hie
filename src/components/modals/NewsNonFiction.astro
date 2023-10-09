@@ -1,13 +1,16 @@
 ---
 import Modal from "../Modal.astro";
-
+import NonFictionBg from "../../images/non-fiction.png";
 ---
 
-<Modal id="non_fiction" color="#91ffea">
+<Modal id="non_fiction" color="#91ffea" bg={NonFictionBg}>
     <div
         class="grid grid-cols-2 grid-rows-2 gap-y-10 gap-x-14 text-white"
     >
-        <div class="bg-blue-dark-translucent bg-opacity-50 p-10">
+        <div class="bg-blue-dark bg-opacity-50 p-10 relative">
+            <span
+                class="absolute w-10 h-10 rounded-full bg-white -top-5 left-10"
+            ></span>
             <h4 class="text-2xl font-semibold uppercase">
                 Preparedness & Resilience
             </h4>
@@ -19,7 +22,10 @@ import Modal from "../Modal.astro";
                 <li class="text-xl">SEO, metadata, digitalization</li>
             </ul>
         </div>
-        <div class="bg-blue-dark-translucent bg-opacity-50 p-10">
+        <div class="bg-blue-dark bg-opacity-50 p-10 relative">
+            <span
+                class="absolute w-10 h-10 rounded-full bg-white -top-5 left-10"
+            ></span>
             <h4 class="text-2xl font-semibold uppercase">
                 Biz / Org
             </h4>
@@ -32,7 +38,10 @@ import Modal from "../Modal.astro";
                 <li class="text-xl">Platforms</li>
             </ul>
         </div>
-        <div class="bg-blue-dark-translucent bg-opacity-50 p-10">
+        <div class="bg-blue-dark bg-opacity-50 p-10 relative">
+            <span
+                class="absolute w-10 h-10 rounded-full bg-white -top-5 left-10"
+            ></span>
             <h4 class="text-2xl font-semibold uppercase">
                 Professionalism
             </h4>
@@ -43,7 +52,10 @@ import Modal from "../Modal.astro";
                 <li class="text-xl">Training & Skills Buildings</li>
             </ul>
         </div>
-        <div class="bg-blue-dark-translucent bg-opacity-50 p-10">
+        <div class="bg-blue-dark bg-opacity-50 p-10 relative">
+            <span
+                class="absolute w-10 h-10 rounded-full bg-white -top-5 left-10"
+            ></span>
             <h4 class="text-2xl font-semibold uppercase">
                 Editorial
             </h4>

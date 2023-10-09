@@ -4,32 +4,34 @@ import Navbar from "./Navbar.astro";
 ---
 
 <Navbar />
-<div class="grid grid-cols-3 gap-4 px-4 mt-10">
-    <div class="col-span-3 md:col-span-2 md:col-start-2">
-        <h1 class="text-5xl text-green-accent font-medium">
-            Discover the power of a Healty Information Ecosystem
+<section id="healthy-ecosystem" class="px-4 mt-10">
+    <div class="max-w-5xl mx-auto">
+        <h1 class="text-5xl text-green-accent font-medium text-center leading-tight">
+            Discover the power of a <br> Healty Information Ecosystem
         </h1>
-        <p class="mt-10 text-lg text-light font-light">
-            Defined by diversity, resiliency, and integrity, a healthy ecosystem
-            is dynamically balanced. Using a systems-based approach, we can
-            improve resource allocation, identify gaps, and design more
-            effective interventions. Our inphographic explores how
-            interconnected systems and heterogeneous species interact in a
-            complex and multivariate network to sustain the broader ecosystem
-            and promote growth.
+        <p class="mt-10 text-lg text-light font-light text-center">
+            Defined by diversity, resiliency, and integrity, a healthy ecosystem is dynamically balanced. Our infographic explores how interconnected and heterogeneous species interact in a complex and multivariate network to sustain the broader ecosystem and promote growth. Using a systems-based approach we can improve resource allocation, identify gaps, and design more effective interventions.
         </p>
     </div>
-</div>
-<div class="grid md:grid-cols-3 mt-10 md:mt-20 gap-5 md:gap-20 px-4">
-    <video class="bg-blue-light aspect-video rounded-3xl col-span-2 w-full"
-    ></video>
-    <div class="mt-auto flex md:flex-col items-center md:items-start gap-5">
+</section>
+<div class="mt-10 md:mt-20 max-w-4xl mx-auto relative">
+    <video playsinline preload="auto" class="bg-blue-light aspect-video rounded-3xl w-full object-cover"
+    >
+        <source src="/video/vid.mp4" type="video/mp4" />
+        <track
+            src="/video/vid.vtt"
+            kind="captions"
+            srclang="en"
+            label="English">
+    </video>
+    <div class="mt-auto flex p-5 flex-col items-center text-center justify-end md:pb-10 gap-5 absolute left-0 top-0 w-full h-full">
+        <div class="absolute rounded-3xl bg-gradient-to-b from-transparent to-black z-10 w-full h-full left-0 top-0 opacity-75"></div>
         <Icon
-            class="w-14 h-14 flex-shrink-0 text-green-accent rounded-full ring-green-accent ring-2"
-            pack="mdi"
-            name="play"
+            data-video-play
+            class="relative cursor-pointer z-30 w-10 h-10 md:w-14 md:h-14 flex-shrink-0 fill-green-accent rounded-full"
+            name="play-button"
         />
-        <div>
+        <div class="relative z-30" data-video-explainer>
             <h3 class="text-green-accent text-2xl md:text-3xl font-normal">
                 How does this work?
             </h3>
@@ -39,3 +41,20 @@ import Navbar from "./Navbar.astro";
         </div>
     </div>
 </div>
+
+<script>
+    const video = document.querySelector("video") as HTMLVideoElement;
+    const playBtn = document.querySelector("[data-video-play]") as HTMLElement;
+    const explainer = document.querySelector("[data-video-explainer]") as HTMLElement;
+
+    playBtn.addEventListener("click", () => {
+        video.play();
+        playBtn.style.display = "none";
+        explainer.style.display = "none";
+    });
+
+    video.addEventListener("ended", () => {
+        playBtn.style.display = "flex";
+        explainer.style.display = "block";
+    });
+</script>

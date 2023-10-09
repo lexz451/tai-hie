@@ -6,6 +6,7 @@ import CivilImg from "../images/civil.png";
 import InfraImg from "../images/infrastructural.png";
 import KeyStoneImg from "../images/keystone.png";
 import PublicImg from "../images/public.png";
+import NonFictionImg from "../images/non-fiction.png";
 import { getImage } from "astro:assets";
 
 
@@ -16,9 +17,11 @@ const opCivilImg = await getImage({src: CivilImg, format: 'webp'});
 const opInfraImg =  await getImage({src: InfraImg, format: 'webp'});
 const opKeyStoneImg = await getImage({src: KeyStoneImg, format: 'webp'});
 const opPublicImg = await getImage({src: PublicImg, format: 'webp'});
+const opNonFictionImg = await getImage({src: NonFictionImg, format: 'webp'});
 ---
 
 <svg
+    class="z-10"
     id="pyramid"
     xmlns="http://www.w3.org/2000/svg"
     xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -242,6 +245,7 @@ const opPublicImg = await getImage({src: PublicImg, format: 'webp'});
         >
             <image xlink:href={opKeyStoneImg.src} />
         </pattern>
+        
         <pattern
             xlink:href="#c"
             id="p"
@@ -291,6 +295,15 @@ const opPublicImg = await getImage({src: PublicImg, format: 'webp'});
             preserveAspectRatio="xMidYMid"
         >
             <image xlink:href={opMediaImg.src} />
+        </pattern>
+        <pattern
+            xlink:href="#f"
+            id="j1"
+            x="0"
+            y="0"
+            preserveAspectRatio="xMidYMid"
+        >
+            <image xlink:href={opNonFictionImg.src} />
         </pattern>
         <pattern
             xlink:href="#g"
@@ -424,7 +437,7 @@ const opPublicImg = await getImage({src: PublicImg, format: 'webp'});
             style="mix-blend-mode:normal"></circle>
     </g>
     <path fill="url(#j)" d="M344.994 137.082H701.85v299.156H344.994z"></path>
-    <path fill="#91ffea" d="M702.167 436.56 523.855 172.235 345.246 436.52Z"
+    <path fill="url(#j1)" d="M702.167 436.56 523.855 172.235 345.246 436.52Z"
     ></path>
     <path
         fill="url(#k)"
@@ -629,7 +642,7 @@ const opPublicImg = await getImage({src: PublicImg, format: 'webp'});
             y="162.12"
             font-weight="700"
             style="line-height:1.3;-inkscape-font-specification:'Inter Bold';text-align:center"
-            text-anchor="middle">MEDIA           SYSTEM</tspan
+            text-anchor="middle">MEDIA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SYSTEM</tspan
         ></text
     >
 
