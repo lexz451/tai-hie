@@ -17,12 +17,7 @@ import Navbar from "./Navbar.astro";
 <div class="mt-10 md:mt-20 max-w-4xl mx-auto relative">
     <video playsinline preload="auto" class="bg-blue-light aspect-video rounded-3xl w-full object-cover"
     >
-        <source src="/video/vid.mp4" type="video/mp4" />
-        <track
-            src="/video/vid.vtt"
-            kind="captions"
-            srclang="en"
-            label="English">
+        <source src="/video/tai-hie.mp4#t=0.1" type="video/mp4" />
     </video>
     <div class="mt-auto flex p-5 flex-col items-center text-center justify-end md:pb-10 gap-5 absolute left-0 top-0 w-full h-full">
         <div class="absolute rounded-3xl bg-gradient-to-b from-transparent to-black z-10 w-full h-full left-0 top-0 opacity-75"></div>
@@ -57,4 +52,21 @@ import Navbar from "./Navbar.astro";
         playBtn.style.display = "flex";
         explainer.style.display = "block";
     });
+
+    // pause the video if it's not in viewport
+
+    const observer2 = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    video.play();
+                } else {
+                    video.pause();
+                }
+            });
+        },
+        { threshold: 0.5 }
+    );
+
+    observer2.observe(video);
 </script>
