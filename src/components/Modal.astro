@@ -6,7 +6,7 @@ const { bg, id, color } = Astro.props;
 const opBg = bg && (await getImage({ src: bg, format: "webp" }));
 ---
 
-<div id={`${id}-modal`} class="modal fixed min-h-screen w-full">
+<div id={`${id}-modal`} class="modal fixed min-h-screen w-full overflow-y-auto">
     <div class="absolute z-10 top-0 right-0 mt-4 mr-4">
         <button class="close text-white text-3xl hover:text-gray-300">
             <Icon name="close" class="w-8 h-8" />
@@ -20,7 +20,7 @@ const opBg = bg && (await getImage({ src: bg, format: "webp" }));
     </div>
     <div class="absolute inset-0 bg-black opacity-20"></div>
     <div
-        class="relative min-h-screen flex flex-col justify-center items-center"
+        class="relative h-screen flex flex-col items-center overflow-y-auto py-20"
     >
         <slot />
     </div>
@@ -38,7 +38,7 @@ const opBg = bg && (await getImage({ src: bg, format: "webp" }));
 
 <script>
     import { activePyramidItem } from "../store/pyramid";
-    import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
+    import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock-upgrade";
     import { gsap } from "gsap";
 
     function showModal(id: string, coords: any[]) {
