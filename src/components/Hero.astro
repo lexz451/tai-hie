@@ -5,81 +5,112 @@ import Navbar from "./Navbar.astro";
 
 <Navbar />
 <section id="healthy-ecosystem" class="px-4 mt-10">
-    <div class="max-w-5xl mx-auto">
-        <h1 class="text-5xl text-green-accent font-medium text-center leading-tight">
-            Discover the power of a <br> Healty Information Ecosystem
-        </h1>
-        <p class="mt-10 text-lg text-light font-light text-center max-w-prose mx-auto">
-            In our rapidly evolving digital age, the quest for a healthy information ecosystem has emerged as an urgent concern. The spread of misinformation, disinformation, surveillance and other unhealthy practices erode trust, polarize communities, and even threaten democracy itself. To address this issue effectively, we must adopt an ecosystems approach that recognizes the interconnectedness of all elements actors and practices involved. <br/> Only by fostering a healthy information ecosystem can we safeguard the integrity of information, protect democratic values, and ensure a more informed and enlightened global society.
-        </p>
-    </div>
+  <div class="max-w-5xl mx-auto">
+    <h1
+      class="text-5xl text-green-accent font-medium text-center leading-tight"
+    >
+      Discover the power of a <br /> Healthy Information Ecosystem
+    </h1>
+    <p
+      class="mt-10 text-lg text-light font-light text-center max-w-prose mx-auto"
+    >
+      In our rapidly evolving digital age, the quest for a healthy information
+      ecosystem has emerged as an important priority. The spread of
+      misinformation, disinformation, surveillance and other unhealthy practices
+      erode trust, polarize communities, <br> and threaten democracy itself.
+    </p>
+    <p class="mt-5 text-lg text-light font-light text-center max-w-prose mx-auto">
+      To address this issue effectively, we must adopt an ecosystems approach
+      that recognizes the interconnectedness of all elements, actors and
+      practices involved.
+    </p>
+    <p class="mt-5 text-lg text-light font-light text-center max-w-prose mx-auto">
+      Only by fostering a healthy information ecosystem can we safeguard the
+      integrity of information, protect democratic values, and ensure a more
+      informed and enlightened global society.
+    </p>
+  </div>
 </section>
 <div class="mt-10 md:mt-20 max-w-4xl mx-auto relative">
-    <video playsinline preload="auto" class="bg-blue-light aspect-video rounded-3xl w-full object-cover"
+  <video
+    playsinline
+    preload="auto"
+    class="bg-blue-light aspect-video rounded-3xl w-full object-cover"
+  >
+    <source src="/video/tai-hie.mp4#t=0.1" type="video/mp4" />
+  </video>
+  <div
+    class="mt-auto flex p-5 flex-col items-center text-center justify-end md:pb-10 gap-5 absolute left-0 top-0 w-full h-full"
+  >
+    <div
+      class="absolute rounded-3xl bg-gradient-to-b from-transparent to-black z-10 w-full h-full left-0 top-0 opacity-75"
     >
-        <source src="/video/tai-hie.mp4#t=0.1" type="video/mp4" />
-    </video>
-    <div class="mt-auto flex p-5 flex-col items-center text-center justify-end md:pb-10 gap-5 absolute left-0 top-0 w-full h-full">
-        <div class="absolute rounded-3xl bg-gradient-to-b from-transparent to-black z-10 w-full h-full left-0 top-0 opacity-75"></div>
-        <Icon
-            data-video-play
-            class="relative cursor-pointer z-30 w-10 h-10 md:w-14 md:h-14 flex-shrink-0 fill-green-accent rounded-full"
-            name="play-button"
-        />
-        <div class="relative z-30" data-video-explainer>
-            <h3 class="text-green-accent text-2xl md:text-3xl font-normal">
-                How does this work?
-            </h3>
-            <p class="text-light text-base font-light md:text-lg mt-2">
+    </div>
+    <Icon
+      data-video-play
+      class="relative cursor-pointer z-30 w-10 h-10 md:w-14 md:h-14 flex-shrink-0 fill-green-accent rounded-full"
+      name="play-button"
+    />
+    <div class="relative z-30" data-video-explainer>
+      <h3 class="text-green-accent text-2xl md:text-3xl font-normal">
+        How does this work?
+      </h3>
+      <!-- <p class="text-light text-base font-light md:text-lg mt-2">
                 Explainer on healthy ecosystem, its concept and how it works
-            </p>
-        </div>
+            </p> -->
     </div>
-    <div class="absolute right-6 bottom-6">
-        <Icon data-video-pause class="hidden relative cursor-pointer z-30 w-8 h-8 md:w-8 md:h-8 flex-shrink-0 fill-white opacity-50 rounded-full" name="pause"></Icon>
-    </div>
+  </div>
+  <div class="absolute right-6 bottom-6">
+    <Icon
+      data-video-pause
+      class="hidden relative cursor-pointer z-30 w-8 h-8 md:w-8 md:h-8 flex-shrink-0 fill-white opacity-50 rounded-full"
+      name="pause"
+    />
+  </div>
 </div>
 
 <script>
-    const video = document.querySelector("video") as HTMLVideoElement;
-    const playBtn = document.querySelector("[data-video-play]") as HTMLElement;
-    const pauseBtn = document.querySelector("[data-video-pause]") as HTMLElement;
-    const explainer = document.querySelector("[data-video-explainer]") as HTMLElement;
+  const video = document.querySelector("video") as HTMLVideoElement;
+  const playBtn = document.querySelector("[data-video-play]") as HTMLElement;
+  const pauseBtn = document.querySelector("[data-video-pause]") as HTMLElement;
+  const explainer = document.querySelector(
+    "[data-video-explainer]"
+  ) as HTMLElement;
 
-    playBtn.addEventListener("click", () => {
-        video.play();
-        playBtn.style.display = "none";
-        explainer.style.display = "none";
-        pauseBtn.style.display = "block";
-    });
+  playBtn.addEventListener("click", () => {
+    video.play();
+    playBtn.style.display = "none";
+    explainer.style.display = "none";
+    pauseBtn.style.display = "block";
+  });
 
-    pauseBtn.addEventListener("click", () => {
-        video.pause();
-        playBtn.style.display = "flex";
-        pauseBtn.style.display = "none";
-        explainer.style.display = "block";
-    });
+  pauseBtn.addEventListener("click", () => {
+    video.pause();
+    playBtn.style.display = "flex";
+    pauseBtn.style.display = "none";
+    explainer.style.display = "block";
+  });
 
-    video.addEventListener("ended", () => {
-        playBtn.style.display = "flex";
-        explainer.style.display = "block";
-        pauseBtn.style.display = "none";
-    });
+  video.addEventListener("ended", () => {
+    playBtn.style.display = "flex";
+    explainer.style.display = "block";
+    pauseBtn.style.display = "none";
+  });
 
-    // // pause the video if it's not in viewport
+  // // pause the video if it's not in viewport
 
-    // const observer2 = new IntersectionObserver(
-    //     (entries) => {
-    //         entries.forEach((entry) => {
-    //             if (entry.isIntersecting) {
-    //                 video.play();
-    //             } else {
-    //                 video.pause();
-    //             }
-    //         });
-    //     },
-    //     { threshold: 0.5 }
-    // );
+  // const observer2 = new IntersectionObserver(
+  //     (entries) => {
+  //         entries.forEach((entry) => {
+  //             if (entry.isIntersecting) {
+  //                 video.play();
+  //             } else {
+  //                 video.pause();
+  //             }
+  //         });
+  //     },
+  //     { threshold: 0.5 }
+  // );
 
-    // observer2.observe(video);
+  // observer2.observe(video);
 </script>
